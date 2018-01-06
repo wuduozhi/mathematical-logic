@@ -1,0 +1,127 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ENTITY cpu_zl IS
+	PORT(
+	EN		:IN STD_LOGIC;
+	IRR		:IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+	MOVA	:OUT STD_LOGIC;
+	MOVB	:OUT STD_LOGIC;
+	MOVC	:OUT STD_LOGIC;
+	ALU		:OUT STD_LOGIC;
+	NOT0	:OUT STD_LOGIC;
+	SHL		:OUT STD_LOGIC;
+	SHR		:OUT STD_LOGIC;
+	JMP     :OUT STD_LOGIC;
+	JZ      :OUT STD_LOGIC;
+	JC      :OUT STD_LOGIC;
+	IN1     :OUT STD_LOGIC;
+	OUT1    :OUT STD_LOGIC;
+	NOP     :OUT STD_LOGIC;
+	HALT	:OUT STD_LOGIC);
+END cpu_zl;
+
+ARCHITECTURE BEHAV OF cpu_zl IS
+SIGNAL DATA		:STD_LOGIC_VECTOR(3 DOWNTO 0);
+
+BEGIN
+	DATA <= IRR(7) & IRR(6) & IRR(5) & IRR(4);
+	PROCESS(DATA,IRR)
+	VARIABLE ZMOVA	:STD_LOGIC;
+	VARIABLE ZMOVB	:STD_LOGIC;
+	VARIABLE ZMOVC	:STD_LOGIC;
+	VARIABLE ZALU	:STD_LOGIC;
+	VARIABLE ZNOT0	:STD_LOGIC;
+	VARIABLE ZSHL	:STD_LOGIC;
+	VARIABLE ZSHR	:STD_LOGIC;
+	VARIABLE ZJMP	:STD_LOGIC;
+	VARIABLE ZJZ	:STD_LOGIC;
+	VARIABLE ZJC	:STD_LOGIC;
+	VARIABLE ZIN	:STD_LOGIC;
+	VARIABLE ZOUT	:STD_LOGIC;
+	VARIABLE ZNOP	:STD_LOGIC;
+	VARIABLE ZHALT	:STD_LOGIC;
+	BEGIN
+	ZMOVA	:='0';
+	ZMOVB	:='0';
+	ZMOVC	:='0';
+	ZALU	:='0';
+	ZNOT0	:='0';
+	ZSHL	:='0';
+	ZSHR	:='0';
+	ZJMP	:='0';
+	ZJZ	    :='0';
+	ZJC	    :='0';
+	ZIN	    :='0';
+	ZOUT	:='0';
+	ZNOP	:='0';
+	ZHALT	:='0';
+			IF(DATA = "1111") THEN
+				IF(IRR(3 DOWNTO 2) = "11") THEN
+					ZMOVB:='1';	
+				ELSIF(IRR(1 DOWNTO 0) = "11") THEN
+					ZMOVC:='1';
+				ELSE
+					ZMOVA:='1';
+				END IF;
+			ELSIF(DATA = "1001") OR (DATA = "0110") OR (DATA = "1110") THEN
+				ZALU:='1';
+			ELSIF(DATA = "0101") THEN
+				ZNOT0:='1';
+			ELSIF(DATA = "1010") THEN
+				IF(IRR(1 DOWNTO 0) = "00") THEN
+					ZSHR:='1';
+				ELSIF(IRR(1 DOWNTO 0) = "11") THEN
+					ZSHL:='1';
+				END IF;
+			ELSIF(DATA = "0001" AND IRR(3 DOWNTO 2) = "00")THEN
+			    IF(IRR(1 DOWNTO 0) ="00")THEN
+			        ZJMP:='1';
+			    ELSIF(IRR(1 DOWNTO 0) ="01")THEN
+			        ZJZ:='1';
+			    ELSIF(IRR(1 DOWNTO 0) ="10")THEN
+                    ZJC:='1';
+                END IF;
+            ELSIF(DATA = "0010") THEN
+                    ZIN:='1';
+            ELSIF(DATA = "0100") THEN
+                    ZOUT:='1';
+            ELSIF(IRR="01110000") THEN
+                    ZNOP:='1';
+			ELSIF IRR="10000000" THEN
+				    ZHALT:='1';
+			END IF;
+			IF(EN='0')THEN
+				ZMOVA	:='0';
+				ZMOVB	:='0';
+				ZMOVC	:='0';
+				ZALU	:='0';
+				ZNOT0	:='0';
+				ZSHL	:='0';
+				ZSHR	:='0';
+				ZJMP	:='0';
+	            ZJZ	    :='0';
+	            ZJC	    :='0';
+	            ZIN	    :='0';
+	            ZOUT	:='0';
+	            ZNOP	:='0';
+				ZHALT	:='0';
+			END IF;
+			MOVA<=ZMOVA;
+			MOVB<=ZMOVB;
+			MOVC<=ZMOVC;
+			ALU<=ZALU;
+			NOT0<=ZNOT0;
+			SHL<=ZSHL;
+			SHR<=ZSHR;
+			JMP<=ZJMP;
+			JZ<=ZJZ;
+			JC<=ZJC;
+			IN1<=ZIN;
+			OUT1<=ZOUT;
+			NOP<=ZNOP;
+			HALT<=ZHALT;
+	END PROCESS;
+END BEHAV;

@@ -1,0 +1,23 @@
+-- ctrl_in
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ctrl_in is
+port(
+	ctrl : in std_logic;
+	STD_IN : in std_logic_vector(7 downto 0);
+	RGS_IN : in std_logic_vector(7 downto 0);
+	REAL_IN : out std_logic_vector(7 downto 0)
+);
+end ctrl_in;
+
+architecture ctrl_in_arch of ctrl_in is
+begin
+	process(ctrl, RGS_IN, STD_IN)
+	begin
+		case ctrl is
+			when '0' => REAL_IN <= RGS_IN;
+			when others => REAL_IN <= STD_IN;
+		end case;
+	end process;
+end ctrl_in_arch;

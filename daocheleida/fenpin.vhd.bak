@@ -1,0 +1,28 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+entity fenpin is
+  
+port(
+  t1: in integer;
+  s: in integer;
+  clk:in std_logic;
+  spks2:out std_logic
+  );
+  end fenpin;
+ architecture fenpin_arch of fenpin is
+ signal cout1:integer range 0 to 4000;
+ begin
+ process(clk,cout1,s,t1)
+ begin
+  if(clk'event and clk='1') then
+  if cout1<t1-1 then
+  cout1<=cout1+1;if(cout1=(t1/2)/s) then spks2<='0' ; end if;
+  else
+   cout1<=0;spks2<='1'; 
+   end if;
+  end if;
+  end process;
+ -- spks2<='0' when cout1<t1-1 else '1';
+  end fenpin_arch;
+  

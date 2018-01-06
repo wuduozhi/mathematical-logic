@@ -1,0 +1,39 @@
+|mux3_1
+d0[0] => dout~15.DATAB
+d0[1] => dout~14.DATAB
+d0[2] => dout~13.DATAB
+d0[3] => dout~12.DATAB
+d0[4] => dout~11.DATAB
+d0[5] => dout~10.DATAB
+d0[6] => dout~9.DATAB
+d0[7] => dout~8.DATAB
+d1[0] => dout~7.DATAB
+d1[1] => dout~6.DATAB
+d1[2] => dout~5.DATAB
+d1[3] => dout~4.DATAB
+d1[4] => dout~3.DATAB
+d1[5] => dout~2.DATAB
+d1[6] => dout~1.DATAB
+d1[7] => dout~0.DATAB
+d2[0] => dout~7.DATAA
+d2[1] => dout~6.DATAA
+d2[2] => dout~5.DATAA
+d2[3] => dout~4.DATAA
+d2[4] => dout~3.DATAA
+d2[5] => dout~2.DATAA
+d2[6] => dout~1.DATAA
+d2[7] => dout~0.DATAA
+sel[0] => Equal0.IN1
+sel[0] => Equal1.IN0
+sel[1] => Equal0.IN0
+sel[1] => Equal1.IN1
+dout[0] <= dout~15.DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= dout~14.DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= dout~13.DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= dout~12.DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= dout~11.DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= dout~10.DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= dout~9.DB_MAX_OUTPUT_PORT_TYPE
+dout[7] <= dout~8.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,37 @@
+|temp
+reset => s[7]~8.IN0
+reset => s[7]~7.OUTPUTSELECT
+reset => s[6]~6.OUTPUTSELECT
+reset => s[5]~5.OUTPUTSELECT
+reset => s[4]~4.OUTPUTSELECT
+reset => s[3]~3.OUTPUTSELECT
+reset => s[2]~2.OUTPUTSELECT
+reset => s[1]~1.OUTPUTSELECT
+reset => s[0]~0.OUTPUTSELECT
+din[0] => s[0]~0.DATAA
+din[1] => s[1]~1.DATAA
+din[2] => s[2]~2.DATAA
+din[3] => s[3]~3.DATAA
+din[4] => s[4]~4.DATAA
+din[5] => s[5]~5.DATAA
+din[6] => s[6]~6.DATAA
+din[7] => s[7]~7.DATAA
+WE => s[7]~8.IN1
+dreset[0] => s[0]~0.DATAB
+dreset[1] => s[1]~1.DATAB
+dreset[2] => s[2]~2.DATAB
+dreset[3] => s[3]~3.DATAB
+dreset[4] => s[4]~4.DATAB
+dreset[5] => s[5]~5.DATAB
+dreset[6] => s[6]~6.DATAB
+dreset[7] => s[7]~7.DATAB
+dout[0] <= s[0].DB_MAX_OUTPUT_PORT_TYPE
+dout[1] <= s[1].DB_MAX_OUTPUT_PORT_TYPE
+dout[2] <= s[2].DB_MAX_OUTPUT_PORT_TYPE
+dout[3] <= s[3].DB_MAX_OUTPUT_PORT_TYPE
+dout[4] <= s[4].DB_MAX_OUTPUT_PORT_TYPE
+dout[5] <= s[5].DB_MAX_OUTPUT_PORT_TYPE
+dout[6] <= s[6].DB_MAX_OUTPUT_PORT_TYPE
+dout[7] <= s[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

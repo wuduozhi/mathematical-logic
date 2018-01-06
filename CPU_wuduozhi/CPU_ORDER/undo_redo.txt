@@ -1,0 +1,59 @@
+WED
+
+	Undo Commands
+	     1.	Arbitrary Value
+			 *** 
+	     2.	Arbitrary Value
+			 *** 
+	     3.	Arbitrary Value
+			 *** 
+	     4.	Arbitrary Value
+			 *** 
+	     5.	Arbitrary Value
+			 *** 
+	     6.	Arbitrary Value
+			 *** 
+	     7.	Arbitrary Value
+			 *** 
+	     8.	Arbitrary Value
+			 *** 
+	     9.	Arbitrary Value
+			 *** 
+	    10.	Arbitrary Value
+			 *** 
+	    11.	Grid Size
+	    12.	End Time
+	    13.	Drop Node
+			 *** 
+	    14.	Drop Node
+			 *** 
+	    15.	Drop Node
+			 *** 
+	    16.	Drop Node
+			 *** 
+	    17.	Drop Node
+			 *** 
+	    18.	Drop Node
+			 *** 
+	    19.	Drop Node
+			 *** 
+	    20.	Drop Node
+			 *** 
+	    21.	Drop Node
+			 *** 
+	    22.	Cut Node(s) or Waveform Divider(s)
+			 ***  *** 
+	    23.	Drop Node
+			 *** 
+	    24.	Drop Node
+			 *** 
+	    25.	Insert Node or Bus
+	    26.	Insert Waveform Divider
+
+
+RPW
+
+	Undo Commands
+	     1.	||Simulation Report||Simulator||Simulation Waveforms
+
+

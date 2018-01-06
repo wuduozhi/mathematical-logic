@@ -1,0 +1,43 @@
+|CPU_REGISTER
+clk => sign[7].CLK
+clk => sign[6].CLK
+clk => sign[5].CLK
+clk => sign[4].CLK
+clk => sign[3].CLK
+clk => sign[2].CLK
+clk => sign[1].CLK
+clk => sign[0].CLK
+in_put[0] => sign[0].DATAIN
+in_put[1] => sign[1].DATAIN
+in_put[2] => sign[2].DATAIN
+in_put[3] => sign[3].DATAIN
+in_put[4] => sign[4].DATAIN
+in_put[5] => sign[5].DATAIN
+in_put[6] => sign[6].DATAIN
+in_put[7] => sign[7].DATAIN
+RE => out_put[7]~7.OE
+RE => out_put[6]~6.OE
+RE => out_put[5]~5.OE
+RE => out_put[4]~4.OE
+RE => out_put[3]~3.OE
+RE => out_put[2]~2.OE
+RE => out_put[1]~1.OE
+RE => out_put[0]~0.OE
+WE => sign[0].ENA
+WE => sign[1].ENA
+WE => sign[2].ENA
+WE => sign[3].ENA
+WE => sign[4].ENA
+WE => sign[5].ENA
+WE => sign[6].ENA
+WE => sign[7].ENA
+out_put[0] <= out_put[0]~0.DB_MAX_OUTPUT_PORT_TYPE
+out_put[1] <= out_put[1]~1.DB_MAX_OUTPUT_PORT_TYPE
+out_put[2] <= out_put[2]~2.DB_MAX_OUTPUT_PORT_TYPE
+out_put[3] <= out_put[3]~3.DB_MAX_OUTPUT_PORT_TYPE
+out_put[4] <= out_put[4]~4.DB_MAX_OUTPUT_PORT_TYPE
+out_put[5] <= out_put[5]~5.DB_MAX_OUTPUT_PORT_TYPE
+out_put[6] <= out_put[6]~6.DB_MAX_OUTPUT_PORT_TYPE
+out_put[7] <= out_put[7]~7.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,574 @@
+Analysis & Synthesis report for cpu
+Sat Jan 06 00:29:20 2018
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for LPM_RAM_IO:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated
+ 13. Parameter Settings for User Entity Instance: LPM_RAM_IO:inst9
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++-------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status   ; Successful - Sat Jan 06 00:29:20 2018        ;
+; Quartus II Version            ; 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition ;
+; Revision Name                 ; cpu                                          ;
+; Top-level Entity Name         ; cpu                                          ;
+; Family                        ; Stratix II                                   ;
+; Logic utilization             ; N/A                                          ;
+;     Combinational ALUTs       ; 42                                           ;
+;     Dedicated logic registers ; 8                                            ;
+; Total registers               ; 8                                            ;
+; Total pins                    ; 69                                           ;
+; Total virtual pins            ; 0                                            ;
+; Total block memory bits       ; 2,048                                        ;
+; DSP block 9-bit elements      ; 0                                            ;
+; Total PLLs                    ; 0                                            ;
+; Total DLLs                    ; 0                                            ;
++-------------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                        ; cpu                ; cpu                ;
+; Family name                                                  ; Stratix II         ; Stratix II         ;
+; Use Generated Physical Constraints File                      ; Off                ;                    ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; DSP Block Balancing                                          ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Auto ROM Replacement                                         ; On                 ; On                 ;
+; Auto RAM Replacement                                         ; On                 ; On                 ;
+; Auto DSP Block Replacement                                   ; On                 ; On                 ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Strict RAM Replacement                                       ; Off                ; Off                ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto RAM Block Balancing                                     ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                            ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing          ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Timing-Driven Synthesis                                      ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                  ; Off                ; Off                ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; SDC constraint protection                                    ; Off                ; Off                ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                           ; Medium             ; Medium             ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                          ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+
+; cpu_3_8_decoder.vhd              ; yes             ; User VHDL File                     ; C:/Users/11346/Desktop/cpu/cpu/cpu_3_8_decoder.vhd                    ;
+; cpu_alu.vhd                      ; yes             ; User VHDL File                     ; C:/Users/11346/Desktop/cpu/cpu/cpu_alu.vhd                            ;
+; cpu_DSC.vhd                      ; yes             ; User VHDL File                     ; C:/Users/11346/Desktop/cpu/cpu/cpu_DSC.vhd                            ;
+; cpu_IR.vhd                       ; yes             ; User VHDL File                     ; C:/Users/11346/Desktop/cpu/cpu/cpu_IR.vhd                             ;
+; cpu_JSQ.vhd                      ; yes             ; User VHDL File                     ; C:/Users/11346/Desktop/cpu/cpu/cpu_JSQ.vhd                            ;
+; cpu_PC.vhd                       ; yes             ; User VHDL File                     ; C:/Users/11346/Desktop/cpu/cpu/cpu_PC.vhd                             ;
+; cpu_regs.vhd                     ; yes             ; User VHDL File                     ; C:/Users/11346/Desktop/cpu/cpu/cpu_regs.vhd                           ;
+; cpu_XUANZEQI.vhd                 ; yes             ; User VHDL File                     ; C:/Users/11346/Desktop/cpu/cpu/cpu_XUANZEQI.vhd                       ;
+; cpu_yiwei.vhd                    ; yes             ; User VHDL File                     ; C:/Users/11346/Desktop/cpu/cpu/cpu_yiwei.vhd                          ;
+; cpu_zl.vhd                       ; yes             ; User VHDL File                     ; C:/Users/11346/Desktop/cpu/cpu/cpu_zl.vhd                             ;
+; cpu.bdf                          ; yes             ; User Block Diagram/Schematic File  ; C:/Users/11346/Desktop/cpu/cpu/cpu.bdf                                ;
+; LPM_RAM_IO.tdf                   ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/LPM_RAM_IO.tdf        ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/altram.inc            ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;
+; aglobal90.inc                    ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/aglobal90.inc         ;
+; altram.tdf                       ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/altram.tdf            ;
+; memmodes.inc                     ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/others/maxplus2/memmodes.inc        ;
+; altsyncram.inc                   ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/altsyncram.inc        ;
+; altqpram.inc                     ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/altqpram.inc          ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/altrom.inc            ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/90sp1/quartus/libraries/megafunctions/altdpram.inc          ;
+; db/altsyncram_tn91.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/11346/Desktop/cpu/cpu/db/altsyncram_tn91.tdf                 ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                         ;
++-----------------------------------------------+---------------------+
+; Resource                                      ; Usage               ;
++-----------------------------------------------+---------------------+
+; Estimated ALUTs Used                          ; 42                  ;
+; Dedicated logic registers                     ; 8                   ;
+;                                               ;                     ;
+; Estimated ALUTs Unavailable                   ; 1                   ;
+;                                               ;                     ;
+; Total combinational functions                 ; 42                  ;
+; Combinational ALUT usage by number of inputs  ;                     ;
+;     -- 7 input functions                      ; 1                   ;
+;     -- 6 input functions                      ; 2                   ;
+;     -- 5 input functions                      ; 13                  ;
+;     -- 4 input functions                      ; 4                   ;
+;     -- <=3 input functions                    ; 22                  ;
+;                                               ;                     ;
+; Combinational ALUTs by mode                   ;                     ;
+;     -- normal mode                            ; 34                  ;
+;     -- extended LUT mode                      ; 1                   ;
+;     -- arithmetic mode                        ; 7                   ;
+;     -- shared arithmetic mode                 ; 0                   ;
+;                                               ;                     ;
+; Estimated ALUT/register pairs used            ; 42                  ;
+;                                               ;                     ;
+; Total registers                               ; 8                   ;
+;     -- Dedicated logic registers              ; 8                   ;
+;     -- I/O registers                          ; 0                   ;
+;                                               ;                     ;
+; Estimated ALMs:  partially or completely used ; 21                  ;
+;                                               ;                     ;
+; I/O pins                                      ; 69                  ;
+; Total block memory bits                       ; 2048                ;
+; Maximum fan-out node                          ; cpu_JSQ:inst4|iq[0] ;
+; Maximum fan-out                               ; 21                  ;
+; Total fan-out                                 ; 308                 ;
+; Average fan-out                               ; 2.43                ;
++-----------------------------------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                               ;
++----------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
+; |cpu                                         ; 42 (0)            ; 8 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 69   ; 0            ; |cpu                                                                                  ; work         ;
+;    |cpu_3_8_decoder:inst10|                  ; 8 (8)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|cpu_3_8_decoder:inst10                                                           ; work         ;
+;    |cpu_DSC:inst2|                           ; 4 (4)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|cpu_DSC:inst2                                                                    ; work         ;
+;    |cpu_JSQ:inst4|                           ; 2 (2)             ; 3 (3)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|cpu_JSQ:inst4                                                                    ; work         ;
+;    |cpu_PC:inst5|                            ; 7 (7)             ; 5 (5)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|cpu_PC:inst5                                                                     ; work         ;
+;    |cpu_alu:inst8|                           ; 16 (16)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|cpu_alu:inst8                                                                    ; work         ;
+;    |cpu_regs:inst3|                          ; 1 (1)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|cpu_regs:inst3                                                                   ; work         ;
+;    |cpu_yiwei:inst7|                         ; 4 (4)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|cpu_yiwei:inst7                                                                  ; work         ;
+;    |lpm_ram_io:inst9|                        ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|lpm_ram_io:inst9                                                                 ; work         ;
+;       |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|lpm_ram_io:inst9|altram:sram                                                     ; work         ;
+;          |altsyncram:ram_block|              ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|lpm_ram_io:inst9|altram:sram|altsyncram:ram_block                                ; work         ;
+;             |altsyncram_tn91:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |cpu|lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated ; work         ;
++----------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                 ;
++---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------------+
+; Name                                                                                        ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF        ;
++---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------------+
+; lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 256          ; 8            ; --           ; --           ; 2048 ; ram_zl.mif ;
++---------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; cpu_DSC:inst2|ALU_M                                ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; cpu_regs:inst3|ra[0]                   ; Merged with cpu_regs:inst3|rc[0]       ;
+; cpu_regs:inst3|rb[0..1]                ; Merged with cpu_regs:inst3|rc[0]       ;
+; cpu_regs:inst3|rc[1..2]                ; Merged with cpu_regs:inst3|rc[0]       ;
+; cpu_regs:inst3|ra[2,6]                 ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|rb[2,4]                 ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|ra[4]                   ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|rc[4]                   ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|ra[7]                   ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|rc[5]                   ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|rb[5,7]                 ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|rc[7]                   ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|ra[1,3,5]               ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|rb[3]                   ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|rc[6]                   ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|rb[6]                   ; Merged with cpu_regs:inst3|rc[3]       ;
+; cpu_regs:inst3|rc[0]                   ; Stuck at VCC due to stuck port data_in ;
+; cpu_regs:inst3|rc[3]                   ; Stuck at GND due to stuck port data_in ;
+; cpu_PC:inst5|pc[0]                     ; Merged with cpu_JSQ:inst4|iq[0]        ;
+; cpu_PC:inst5|pc[1]                     ; Merged with cpu_JSQ:inst4|iq[1]        ;
+; cpu_PC:inst5|pc[2]                     ; Merged with cpu_JSQ:inst4|iq[2]        ;
+; Total Number of Removed Registers = 27 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 8     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 3 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |cpu|cpu_yiwei:inst7|ywljsc[3]~7 ;
+; 6:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |cpu|cpu_alu:inst8|alu_out[1]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Source assignments for LPM_RAM_IO:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                        ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                         ;
++---------------------------------+--------------------+------+-------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_RAM_IO:inst9 ;
++------------------------+--------------+-----------------------+
+; Parameter Name         ; Value        ; Type                  ;
++------------------------+--------------+-----------------------+
+; LPM_WIDTH              ; 8            ; Signed Integer        ;
+; LPM_WIDTHAD            ; 8            ; Signed Integer        ;
+; LPM_NUMWORDS           ; 256          ; Signed Integer        ;
+; LPM_INDATA             ; REGISTERED   ; Untyped               ;
+; LPM_ADDRESS_CONTROL    ; REGISTERED   ; Untyped               ;
+; LPM_OUTDATA            ; UNREGISTERED ; Untyped               ;
+; LPM_FILE               ; ram_zl.mif   ; Untyped               ;
+; USE_EAB                ; ON           ; Untyped               ;
+; DEVICE_FAMILY          ; Stratix II   ; Untyped               ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE        ;
++------------------------+--------------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Jan 06 00:29:02 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cpu -c cpu
+Info: Found 2 design units, including 1 entities, in source file cpu_3_8_decoder.vhd
+    Info: Found design unit 1: cpu_3_8_decoder-description
+    Info: Found entity 1: cpu_3_8_decoder
+Info: Found 2 design units, including 1 entities, in source file cpu_alu.vhd
+    Info: Found design unit 1: cpu_alu-description
+    Info: Found entity 1: cpu_alu
+Info: Found 2 design units, including 1 entities, in source file cpu_DSC.vhd
+    Info: Found design unit 1: cpu_DSC-DESCRIPTION
+    Info: Found entity 1: cpu_DSC
+Info: Found 2 design units, including 1 entities, in source file cpu_IR.vhd
+    Info: Found design unit 1: cpu_IR-a
+    Info: Found entity 1: cpu_IR
+Info: Found 2 design units, including 1 entities, in source file cpu_jcq.vhd
+    Info: Found design unit 1: cpu_jcq-description
+    Info: Found entity 1: cpu_jcq
+Info: Found 2 design units, including 1 entities, in source file cpu_JSQ.vhd
+    Info: Found design unit 1: cpu_JSQ-bhv
+    Info: Found entity 1: cpu_JSQ
+Info: Found 2 design units, including 1 entities, in source file cpu_PC.vhd
+    Info: Found design unit 1: cpu_PC-a
+    Info: Found entity 1: cpu_PC
+Info: Found 2 design units, including 1 entities, in source file cpu_regs.vhd
+    Info: Found design unit 1: cpu_regs-ab
+    Info: Found entity 1: cpu_regs
+Info: Found 2 design units, including 1 entities, in source file cpu_XUANZEQI.vhd
+    Info: Found design unit 1: cpu_XUANZEQI-a
+    Info: Found entity 1: cpu_XUANZEQI
+Info: Found 2 design units, including 1 entities, in source file cpu_yiwei.vhd
+    Info: Found design unit 1: cpu_yiwei-a
+    Info: Found entity 1: cpu_yiwei
+Info: Found 2 design units, including 1 entities, in source file cpu_zl.vhd
+    Info: Found design unit 1: cpu_zl-BEHAV
+    Info: Found entity 1: cpu_zl
+Info: Found 1 design units, including 1 entities, in source file cpu.bdf
+    Info: Found entity 1: cpu
+Info: Elaborating entity "cpu" for the top level hierarchy
+Info: Elaborating entity "cpu_DSC" for hierarchy "cpu_DSC:inst2"
+Warning (10036): Verilog HDL or VHDL warning at cpu_DSC.vhd(44): object "FETCH1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at cpu_DSC.vhd(44): object "FETCH2" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at cpu_DSC.vhd(44): object "MOVA1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at cpu_DSC.vhd(44): object "MOVB1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at cpu_DSC.vhd(44): object "MOVC1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at cpu_DSC.vhd(44): object "ALU2" assigned a value but never read
+Warning (10631): VHDL Process Statement warning at cpu_DSC.vhd(43): inferring latch(es) for signal or variable "ALU_M", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "ALU_M" at cpu_DSC.vhd(43)
+Info: Elaborating entity "cpu_zl" for hierarchy "cpu_zl:inst"
+Warning (10492): VHDL Process Statement warning at cpu_zl.vhd(96): signal "EN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "cpu_IR" for hierarchy "cpu_IR:inst1"
+Warning (10631): VHDL Process Statement warning at cpu_IR.vhd(13): inferring latch(es) for signal or variable "outir", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "outir[0]" at cpu_IR.vhd(13)
+Info (10041): Inferred latch for "outir[1]" at cpu_IR.vhd(13)
+Info (10041): Inferred latch for "outir[2]" at cpu_IR.vhd(13)
+Info (10041): Inferred latch for "outir[3]" at cpu_IR.vhd(13)
+Info (10041): Inferred latch for "outir[4]" at cpu_IR.vhd(13)
+Info (10041): Inferred latch for "outir[5]" at cpu_IR.vhd(13)
+Info (10041): Inferred latch for "outir[6]" at cpu_IR.vhd(13)
+Info (10041): Inferred latch for "outir[7]" at cpu_IR.vhd(13)
+Info: Elaborating entity "LPM_RAM_IO" for hierarchy "LPM_RAM_IO:inst9"
+Info: Elaborated megafunction instantiation "LPM_RAM_IO:inst9"
+Info: Instantiated megafunction "LPM_RAM_IO:inst9" with the following parameter:
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
+    Info: Parameter "LPM_FILE" = "ram_zl.mif"
+    Info: Parameter "LPM_INDATA" = "REGISTERED"
+    Info: Parameter "LPM_NUMWORDS" = "256"
+    Info: Parameter "LPM_OUTDATA" = "UNREGISTERED"
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_WIDTHAD" = "8"
+Info: Elaborating entity "altram" for hierarchy "LPM_RAM_IO:inst9|altram:sram"
+Warning: Assertion warning: altram does not support Stratix II device family -- attempting best-case memory conversions, but power-up states and read during write behavior will be different for Stratix II devices
+Info: Elaborated megafunction instantiation "LPM_RAM_IO:inst9|altram:sram", which is child of megafunction instantiation "LPM_RAM_IO:inst9"
+Info: Elaborating entity "altsyncram" for hierarchy "LPM_RAM_IO:inst9|altram:sram|altsyncram:ram_block"
+Info: Elaborated megafunction instantiation "LPM_RAM_IO:inst9|altram:sram|altsyncram:ram_block", which is child of megafunction instantiation "LPM_RAM_IO:inst9"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_tn91.tdf
+    Info: Found entity 1: altsyncram_tn91
+Info: Elaborating entity "altsyncram_tn91" for hierarchy "LPM_RAM_IO:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated"
+Info: Elaborating entity "cpu_XUANZEQI" for hierarchy "cpu_XUANZEQI:inst6"
+Warning (10492): VHDL Process Statement warning at cpu_XUANZEQI.vhd(14): signal "in0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_XUANZEQI.vhd(16): signal "in1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_XUANZEQI.vhd(18): signal "in2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at cpu_XUANZEQI.vhd(11): inferring latch(es) for signal or variable "x_out", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "x_out[0]" at cpu_XUANZEQI.vhd(11)
+Info (10041): Inferred latch for "x_out[1]" at cpu_XUANZEQI.vhd(11)
+Info (10041): Inferred latch for "x_out[2]" at cpu_XUANZEQI.vhd(11)
+Info (10041): Inferred latch for "x_out[3]" at cpu_XUANZEQI.vhd(11)
+Info (10041): Inferred latch for "x_out[4]" at cpu_XUANZEQI.vhd(11)
+Info (10041): Inferred latch for "x_out[5]" at cpu_XUANZEQI.vhd(11)
+Info (10041): Inferred latch for "x_out[6]" at cpu_XUANZEQI.vhd(11)
+Info (10041): Inferred latch for "x_out[7]" at cpu_XUANZEQI.vhd(11)
+Info: Elaborating entity "cpu_PC" for hierarchy "cpu_PC:inst5"
+Info: Elaborating entity "cpu_yiwei" for hierarchy "cpu_yiwei:inst7"
+Warning (10492): VHDL Process Statement warning at cpu_yiwei.vhd(18): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_yiwei.vhd(19): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_yiwei.vhd(21): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_yiwei.vhd(22): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_yiwei.vhd(24): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_yiwei.vhd(27): signal "m" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at cpu_yiwei.vhd(15): inferring latch(es) for signal or variable "ywljsc", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_yiwei.vhd(15): inferring latch(es) for signal or variable "m", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "m" at cpu_yiwei.vhd(15)
+Info (10041): Inferred latch for "ywljsc[0]" at cpu_yiwei.vhd(15)
+Info (10041): Inferred latch for "ywljsc[1]" at cpu_yiwei.vhd(15)
+Info (10041): Inferred latch for "ywljsc[2]" at cpu_yiwei.vhd(15)
+Info (10041): Inferred latch for "ywljsc[3]" at cpu_yiwei.vhd(15)
+Info (10041): Inferred latch for "ywljsc[4]" at cpu_yiwei.vhd(15)
+Info (10041): Inferred latch for "ywljsc[5]" at cpu_yiwei.vhd(15)
+Info (10041): Inferred latch for "ywljsc[6]" at cpu_yiwei.vhd(15)
+Info (10041): Inferred latch for "ywljsc[7]" at cpu_yiwei.vhd(15)
+Info: Elaborating entity "cpu_alu" for hierarchy "cpu_alu:inst8"
+Warning (10492): VHDL Process Statement warning at cpu_alu.vhd(23): signal "s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_alu.vhd(26): signal "s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_alu.vhd(29): signal "k1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_alu.vhd(29): signal "k2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_alu.vhd(30): signal "k3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_alu.vhd(32): signal "s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_alu.vhd(41): signal "s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_alu.vhd(44): signal "s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at cpu_alu.vhd(16): inferring latch(es) for signal or variable "k1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_alu.vhd(16): inferring latch(es) for signal or variable "k2", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_alu.vhd(16): inferring latch(es) for signal or variable "k3", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "k3[8]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k2[0]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k2[1]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k2[2]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k2[3]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k2[4]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k2[5]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k2[6]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k2[7]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k2[8]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k1[0]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k1[1]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k1[2]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k1[3]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k1[4]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k1[5]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k1[6]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k1[7]" at cpu_alu.vhd(16)
+Info (10041): Inferred latch for "k1[8]" at cpu_alu.vhd(16)
+Info: Elaborating entity "cpu_regs" for hierarchy "cpu_regs:inst3"
+Warning (10492): VHDL Process Statement warning at cpu_regs.vhd(16): signal "rb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_regs.vhd(18): signal "rc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_regs.vhd(20): signal "rb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_regs.vhd(25): signal "rc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_regs.vhd(27): signal "ra" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "cpu_3_8_decoder" for hierarchy "cpu_3_8_decoder:inst10"
+Info: Elaborating entity "cpu_JSQ" for hierarchy "cpu_JSQ:inst4"
+Warning: LATCH primitive "cpu_IR:inst1|outir[1]" is permanently enabled
+Warning: LATCH primitive "cpu_IR:inst1|outir[2]" is permanently enabled
+Warning: LATCH primitive "cpu_IR:inst1|outir[3]" is permanently enabled
+Warning: LATCH primitive "cpu_IR:inst1|outir[4]" is permanently enabled
+Warning: LATCH primitive "cpu_IR:inst1|outir[5]" is permanently enabled
+Warning: LATCH primitive "cpu_IR:inst1|outir[6]" is permanently enabled
+Warning: LATCH primitive "cpu_IR:inst1|outir[7]" is permanently enabled
+Warning: LATCH primitive "cpu_IR:inst1|outir[0]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[1]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[2]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[3]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[4]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[5]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[6]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[7]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[0]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[1]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[2]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[3]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[4]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[5]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[6]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[7]" is permanently enabled
+Warning: LATCH primitive "cpu_XUANZEQI:inst6|x_out[0]" is permanently enabled
+Warning: LATCH primitive "cpu_yiwei:inst7|ywljsc[7]" is permanently enabled
+Warning: LATCH primitive "cpu_yiwei:inst7|ywljsc[6]" is permanently enabled
+Warning: LATCH primitive "cpu_yiwei:inst7|ywljsc[5]" is permanently enabled
+Warning: LATCH primitive "cpu_yiwei:inst7|ywljsc[4]" is permanently enabled
+Warning: LATCH primitive "cpu_yiwei:inst7|ywljsc[3]" is permanently enabled
+Warning: LATCH primitive "cpu_yiwei:inst7|ywljsc[2]" is permanently enabled
+Warning: LATCH primitive "cpu_yiwei:inst7|ywljsc[1]" is permanently enabled
+Warning: LATCH primitive "cpu_yiwei:inst7|ywljsc[0]" is permanently enabled
+Warning: Always-enabled tri-state buffer(s) removed
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[7]" to the node "IR_bus[7]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[7]" to the node "alu_in[3]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[6]" to the node "IR_bus[6]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[6]" to the node "alu_in[2]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[5]" to the node "IR_bus[5]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[5]" to the node "alu_in[1]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[4]" to the node "IR_bus[4]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[4]" to the node "alu_in[0]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[3]" to the node "IR_bus[3]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[3]" to the node "R2[0]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[2]" to the node "IR_bus[2]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[1]" to the node "IR_bus[1]" into a wire
+    Warning: Converted the fanout from the always-enabled tri-state buffer "lpm_ram_io:inst9|datatri[0]" to the node "IR_bus[0]" into a wire
+Warning: Tri-state node(s) do not directly drive top-level pin(s)
+    Warning: Converted the fan-out from the tri-state buffer "lpm_ram_io:inst9|datatri[7]" to the node "lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|q_a[7]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "lpm_ram_io:inst9|datatri[6]" to the node "lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|q_a[6]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "lpm_ram_io:inst9|datatri[5]" to the node "lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|q_a[5]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "lpm_ram_io:inst9|datatri[4]" to the node "lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|q_a[4]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "lpm_ram_io:inst9|datatri[3]" to the node "lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|q_a[3]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "lpm_ram_io:inst9|datatri[2]" to the node "lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|q_a[2]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "lpm_ram_io:inst9|datatri[1]" to the node "lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|q_a[1]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "lpm_ram_io:inst9|datatri[0]" to the node "lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|q_a[0]" into an OR gate
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "R1[7]" is stuck at GND
+    Warning (13410): Pin "R1[6]" is stuck at GND
+    Warning (13410): Pin "R1[5]" is stuck at GND
+    Warning (13410): Pin "R1[4]" is stuck at GND
+    Warning (13410): Pin "R1[3]" is stuck at GND
+    Warning (13410): Pin "R2[7]" is stuck at GND
+    Warning (13410): Pin "R2[6]" is stuck at GND
+    Warning (13410): Pin "R2[5]" is stuck at GND
+    Warning (13410): Pin "R2[4]" is stuck at GND
+    Warning (13410): Pin "R2[3]" is stuck at GND
+Info: Implemented 119 device resources after synthesis - the final resource count might be different
+    Info: Implemented 1 input pins
+    Info: Implemented 68 output pins
+    Info: Implemented 42 logic cells
+    Info: Implemented 8 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 104 warnings
+    Info: Peak virtual memory: 268 megabytes
+    Info: Processing ended: Sat Jan 06 00:29:20 2018
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:16
+
+

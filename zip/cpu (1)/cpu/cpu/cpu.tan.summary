@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 13.398 ns
+From           : lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|ram_block1a0~porta_address_reg7
+To             : yiwei_bus[2]
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 384.62 MHz ( period = 2.600 ns )
+From           : lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|ram_block1a0~porta_address_reg7
+To             : lpm_ram_io:inst9|altram:sram|altsyncram:ram_block|altsyncram_tn91:auto_generated|ram_block1a0~porta_datain_reg7
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

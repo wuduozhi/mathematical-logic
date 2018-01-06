@@ -1,0 +1,35 @@
+|CPU_IR_REGISTER
+CLK => R_IR[7].CLK
+CLK => R_IR[6].CLK
+CLK => R_IR[5].CLK
+CLK => R_IR[4].CLK
+CLK => R_IR[3].CLK
+CLK => R_IR[2].CLK
+CLK => R_IR[1].CLK
+CLK => R_IR[0].CLK
+LD_IR => R_IR[0].ENA
+LD_IR => R_IR[1].ENA
+LD_IR => R_IR[2].ENA
+LD_IR => R_IR[3].ENA
+LD_IR => R_IR[4].ENA
+LD_IR => R_IR[5].ENA
+LD_IR => R_IR[6].ENA
+LD_IR => R_IR[7].ENA
+Data_in[0] => R_IR[0].DATAIN
+Data_in[1] => R_IR[1].DATAIN
+Data_in[2] => R_IR[2].DATAIN
+Data_in[3] => R_IR[3].DATAIN
+Data_in[4] => R_IR[4].DATAIN
+Data_in[5] => R_IR[5].DATAIN
+Data_in[6] => R_IR[6].DATAIN
+Data_in[7] => R_IR[7].DATAIN
+Data_out[0] <= R_IR[0].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[1] <= R_IR[1].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[2] <= R_IR[2].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[3] <= R_IR[3].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[4] <= R_IR[4].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[5] <= R_IR[5].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[6] <= R_IR[6].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[7] <= R_IR[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

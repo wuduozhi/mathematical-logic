@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Jan 06 00:22:43 2018
+Quartus II Version : 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition
+Revision Name : ctrl_out
+Top-level Entity Name : ctrl_out
+Family : Cyclone II
+Device : EP2C8Q208C8
+Timing Models : Final
+Total logic elements : 0 / 8,256 ( 0 % )
+    Total combinational functions : 0 / 8,256 ( 0 % )
+    Dedicated logic registers : 0 / 8,256 ( 0 % )
+Total registers : 0
+Total pins : 17 / 138 ( 12 % )
+Total virtual pins : 0
+Total memory bits : 0 / 165,888 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 36 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )
