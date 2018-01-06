@@ -1,0 +1,1180 @@
+Fitter report for daocheleida
+Fri Dec 22 15:05:46 2017
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Incremental Compilation Preservation Summary
+  6. Incremental Compilation Partition Settings
+  7. Incremental Compilation Placement Preservation
+  8. Pin-Out File
+  9. Fitter Resource Usage Summary
+ 10. Input Pins
+ 11. Output Pins
+ 12. I/O Bank Usage
+ 13. All Package Pins
+ 14. Output Pin Default Load For Reported TCO
+ 15. Fitter Resource Utilization by Entity
+ 16. Delay Chain Summary
+ 17. Pad To Core Delay Chain Fanout
+ 18. Control Signals
+ 19. Global & Other Fast Signals
+ 20. Non-Global High Fan-Out Signals
+ 21. Interconnect Usage Summary
+ 22. LAB Logic Elements
+ 23. LAB-wide Signals
+ 24. LAB Signals Sourced
+ 25. LAB Signals Sourced Out
+ 26. LAB Distinct Inputs
+ 27. Fitter Device Options
+ 28. Estimated Delay Added for Hold Timing
+ 29. Fitter Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------+
+; Fitter Summary                                                       ;
++-----------------------+----------------------------------------------+
+; Fitter Status         ; Successful - Fri Dec 22 15:05:46 2017        ;
+; Quartus II Version    ; 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition ;
+; Revision Name         ; daocheleida                                  ;
+; Top-level Entity Name ; daocheleida                                  ;
+; Family                ; Cyclone                                      ;
+; Device                ; EP1C6Q240C8                                  ;
+; Timing Models         ; Final                                        ;
+; Total logic elements  ; 1,033 / 5,980 ( 17 % )                       ;
+; Total pins            ; 14 / 185 ( 8 % )                             ;
+; Total virtual pins    ; 0                                            ;
+; Total memory bits     ; 0 / 92,160 ( 0 % )                           ;
+; Total PLLs            ; 0 / 2 ( 0 % )                                ;
++-----------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                                                      ;
++--------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Option                                                             ; Setting                        ; Default Value                  ;
++--------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Device                                                             ; EP1C6Q240C8                    ;                                ;
+; Fit Attempts to Skip                                               ; 0                              ; 0.0                            ;
+; Device I/O Standard                                                ; 3.3-V LVTTL                    ;                                ;
+; Use smart compilation                                              ; Off                            ; Off                            ;
+; Use TimeQuest Timing Analyzer                                      ; Off                            ; Off                            ;
+; Router Timing Optimization Level                                   ; Normal                         ; Normal                         ;
+; Placement Effort Multiplier                                        ; 1.0                            ; 1.0                            ;
+; Router Effort Multiplier                                           ; 1.0                            ; 1.0                            ;
+; Optimize Hold Timing                                               ; IO Paths and Minimum TPD Paths ; IO Paths and Minimum TPD Paths ;
+; Optimize Multi-Corner Timing                                       ; Off                            ; Off                            ;
+; Optimize Timing                                                    ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing for ECOs                                           ; Off                            ; Off                            ;
+; Regenerate full fit report during ECO compiles                     ; Off                            ; Off                            ;
+; Optimize IOC Register Placement for Timing                         ; On                             ; On                             ;
+; Limit to One Fitting Attempt                                       ; Off                            ; Off                            ;
+; Final Placement Optimizations                                      ; Automatically                  ; Automatically                  ;
+; Fitter Aggressive Routability Optimizations                        ; Automatically                  ; Automatically                  ;
+; Fitter Initial Placement Seed                                      ; 1                              ; 1                              ;
+; Slow Slew Rate                                                     ; Off                            ; Off                            ;
+; PCI I/O                                                            ; Off                            ; Off                            ;
+; Weak Pull-Up Resistor                                              ; Off                            ; Off                            ;
+; Enable Bus-Hold Circuitry                                          ; Off                            ; Off                            ;
+; Auto Global Memory Control Signals                                 ; Off                            ; Off                            ;
+; Auto Packed Registers                                              ; Auto                           ; Auto                           ;
+; Auto Delay Chains                                                  ; On                             ; On                             ;
+; Auto Merge PLLs                                                    ; On                             ; On                             ;
+; Perform Physical Synthesis for Combinational Logic for Performance ; Off                            ; Off                            ;
+; Perform Register Duplication for Performance                       ; Off                            ; Off                            ;
+; Perform Register Retiming for Performance                          ; Off                            ; Off                            ;
+; Perform Asynchronous Signal Pipelining                             ; Off                            ; Off                            ;
+; Fitter Effort                                                      ; Auto Fit                       ; Auto Fit                       ;
+; Physical Synthesis Effort Level                                    ; Normal                         ; Normal                         ;
+; Logic Cell Insertion - Logic Duplication                           ; Auto                           ; Auto                           ;
+; Auto Register Duplication                                          ; Auto                           ; Auto                           ;
+; Auto Global Clock                                                  ; On                             ; On                             ;
+; Auto Global Register Control Signals                               ; On                             ; On                             ;
+; Stop After Congestion Map Generation                               ; Off                            ; Off                            ;
+; Save Intermediate Fitting Results                                  ; Off                            ; Off                            ;
+; Force Fitter to Avoid Periphery Placement Warnings                 ; Off                            ; Off                            ;
++--------------------------------------------------------------------+--------------------------------+--------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------+
+; Incremental Compilation Preservation Summary  ;
++-------------------------+---------------------+
+; Type                    ; Value               ;
++-------------------------+---------------------+
+; Placement               ;                     ;
+;     -- Requested        ; 0 / 1055 ( 0.00 % ) ;
+;     -- Achieved         ; 0 / 1055 ( 0.00 % ) ;
+;                         ;                     ;
+; Routing (by Connection) ;                     ;
+;     -- Requested        ; 0 / 0 ( 0.00 % )    ;
+;     -- Achieved         ; 0 / 0 ( 0.00 % )    ;
++-------------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Incremental Compilation Partition Settings                                                                                                       ;
++----------------+----------------+-------------------+-------------------------+------------------------+------------------------------+----------+
+; Partition Name ; Partition Type ; Netlist Type Used ; Preservation Level Used ; Netlist Type Requested ; Preservation Level Requested ; Contents ;
++----------------+----------------+-------------------+-------------------------+------------------------+------------------------------+----------+
+; Top            ; User-created   ; Source File       ; N/A                     ; Source File            ; N/A                          ;          ;
++----------------+----------------+-------------------+-------------------------+------------------------+------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------------+
+; Incremental Compilation Placement Preservation                                             ;
++----------------+---------+-------------------+-------------------------+-------------------+
+; Partition Name ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
++----------------+---------+-------------------+-------------------------+-------------------+
+; Top            ; 1055    ; 0                 ; N/A                     ; Source File       ;
++----------------+---------+-------------------+-------------------------+-------------------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in H:/exp/daocheleida/daocheleida.pin.
+
+
++----------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                        ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Total logic elements                        ; 1,033 / 5,980 ( 17 % ) ;
+;     -- Combinational with no register       ; 901                    ;
+;     -- Register only                        ; 16                     ;
+;     -- Combinational with a register        ; 116                    ;
+;                                             ;                        ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 194                    ;
+;     -- 3 input functions                    ; 252                    ;
+;     -- 2 input functions                    ; 378                    ;
+;     -- 1 input functions                    ; 192                    ;
+;     -- 0 input functions                    ; 1                      ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 635                    ;
+;     -- arithmetic mode                      ; 398                    ;
+;     -- qfbk mode                            ; 6                      ;
+;     -- register cascade mode                ; 0                      ;
+;     -- synchronous clear/load mode          ; 38                     ;
+;     -- asynchronous clear/load mode         ; 34                     ;
+;                                             ;                        ;
+; Total registers                             ; 132 / 6,523 ( 2 % )    ;
+; Total LABs                                  ; 132 / 598 ( 22 % )     ;
+; Logic elements in carry chains              ; 497                    ;
+; User inserted logic elements                ; 0                      ;
+; Virtual pins                                ; 0                      ;
+; I/O pins                                    ; 14 / 185 ( 8 % )       ;
+;     -- Clock pins                           ; 1 / 2 ( 50 % )         ;
+; Global signals                              ; 5                      ;
+; M4Ks                                        ; 0 / 20 ( 0 % )         ;
+; Total memory bits                           ; 0 / 92,160 ( 0 % )     ;
+; Total RAM block bits                        ; 0 / 92,160 ( 0 % )     ;
+; PLLs                                        ; 0 / 2 ( 0 % )          ;
+; Global clocks                               ; 5 / 8 ( 63 % )         ;
+; JTAGs                                       ; 0 / 1 ( 0 % )          ;
+; ASMI Blocks                                 ; 0 / 1 ( 0 % )          ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
+; Average interconnect usage (total/H/V)      ; 4% / 3% / 5%           ;
+; Peak interconnect usage (total/H/V)         ; 8% / 7% / 9%           ;
+; Maximum fan-out node                        ; clk                    ;
+; Maximum fan-out                             ; 92                     ;
+; Highest non-global fan-out signal           ; average:inst4|Equal0~0 ;
+; Highest non-global fan-out                  ; 25                     ;
+; Total fan-out                               ; 2883                   ;
+; Average fan-out                             ; 2.75                   ;
++---------------------------------------------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                                                 ;
++------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
+; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
++------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
+; clk  ; 28    ; 1        ; 0            ; 12           ; 2           ; 92                    ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; echo ; 58    ; 1        ; 0            ; 2            ; 2           ; 17                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
++------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                ;
++---------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+-------+
+; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load  ;
++---------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+-------+
+; qa      ; 196   ; 2        ; 28           ; 21           ; 2           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
+; qb      ; 195   ; 2        ; 28           ; 21           ; 1           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
+; qc      ; 194   ; 2        ; 28           ; 21           ; 0           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
+; qd      ; 193   ; 2        ; 30           ; 21           ; 2           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
+; qe      ; 188   ; 2        ; 30           ; 21           ; 1           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
+; qf      ; 187   ; 2        ; 30           ; 21           ; 0           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
+; qg      ; 186   ; 2        ; 32           ; 21           ; 2           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
+; to38[0] ; 182   ; 2        ; 34           ; 21           ; 1           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
+; to38[1] ; 183   ; 2        ; 34           ; 21           ; 2           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
+; to38[2] ; 184   ; 2        ; 32           ; 21           ; 0           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
+; trig    ; 57    ; 1        ; 0            ; 2            ; 1           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
+; voice   ; 201   ; 2        ; 24           ; 21           ; 1           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 10 pF ;
++---------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+-------+
+
+
++------------------------------------------------------------+
+; I/O Bank Usage                                             ;
++----------+------------------+---------------+--------------+
+; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
++----------+------------------+---------------+--------------+
+; 1        ; 5 / 44 ( 11 % )  ; 3.3V          ; --           ;
+; 2        ; 11 / 48 ( 23 % ) ; 3.3V          ; --           ;
+; 3        ; 0 / 45 ( 0 % )   ; 3.3V          ; --           ;
+; 4        ; 0 / 48 ( 0 % )   ; 3.3V          ; --           ;
++----------+------------------+---------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                                                                                       ;
++----------+------------+----------+------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage                           ; Dir.   ; I/O Standard ; Voltage ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
++----------+------------+----------+------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+; 1        ; 0          ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 2        ; 1          ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 3        ; 2          ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 4        ; 3          ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 5        ; 4          ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 6        ; 5          ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 7        ; 6          ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 8        ; 7          ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 9        ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 10       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 11       ; 8          ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 12       ; 9          ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 13       ; 10         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 14       ; 11         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 15       ; 12         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 16       ; 13         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 17       ; 14         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 18       ; 15         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 19       ; 16         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 20       ; 17         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 21       ; 18         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 22       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 23       ; 19         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 24       ; 20         ; 1        ; ~nCSO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; On           ;
+; 25       ; 21         ; 1        ; ^DATA0                                   ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; 26       ; 22         ; 1        ; ^nCONFIG                                 ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 27       ;            ;          ; VCCA_PLL1                                ; power  ;              ; 1.5V    ; --         ;                 ; --       ; --           ;
+; 28       ; 23         ; 1        ; clk                                      ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 29       ; 24         ; 1        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 30       ;            ;          ; GNDA_PLL1                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 31       ;            ;          ; GNDG_PLL1                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 32       ; 25         ; 1        ; ^nCEO                                    ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 33       ; 26         ; 1        ; ^nCE                                     ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 34       ; 27         ; 1        ; ^MSEL0                                   ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 35       ; 28         ; 1        ; ^MSEL1                                   ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 36       ; 29         ; 1        ; ^DCLK                                    ; bidir  ;              ;         ; --         ;                 ; --       ; --           ;
+; 37       ; 30         ; 1        ; ~ASDO~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; On           ;
+; 38       ; 31         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 39       ; 32         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 40       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 41       ; 33         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 42       ; 34         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 43       ; 35         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 44       ; 36         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 45       ; 37         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 46       ; 38         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 47       ; 39         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 48       ; 40         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 49       ; 41         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 50       ; 42         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 51       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 52       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 53       ; 43         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 54       ; 44         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 55       ; 45         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 56       ; 46         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 57       ; 47         ; 1        ; trig                                     ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 58       ; 48         ; 1        ; echo                                     ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; 59       ; 49         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 60       ; 50         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 61       ; 51         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 62       ; 52         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 63       ; 53         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 64       ; 54         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 65       ; 55         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 66       ; 56         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 67       ; 57         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 68       ; 58         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 69       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 70       ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 71       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 72       ;            ;          ; VCCINT                                   ; power  ;              ; 1.5V    ; --         ;                 ; --       ; --           ;
+; 73       ; 59         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 74       ; 60         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 75       ; 61         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 76       ; 62         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 77       ; 63         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 78       ; 64         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 79       ; 65         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 80       ; 66         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 81       ; 67         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 82       ; 68         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 83       ; 69         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 84       ; 70         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 85       ; 71         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 86       ; 72         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 87       ; 73         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 88       ; 74         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 89       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 90       ;            ;          ; VCCINT                                   ; power  ;              ; 1.5V    ; --         ;                 ; --       ; --           ;
+; 91       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 92       ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 93       ; 75         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 94       ; 76         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 95       ; 77         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 96       ; 78         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 97       ; 79         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 98       ; 80         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 99       ; 81         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 100      ; 82         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 101      ; 83         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 102      ; 84         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 103      ; 85         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 104      ; 86         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 105      ; 87         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 106      ; 88         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 107      ; 89         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 108      ; 90         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 109      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 110      ;            ;          ; VCCINT                                   ; power  ;              ; 1.5V    ; --         ;                 ; --       ; --           ;
+; 111      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 112      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 113      ; 91         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 114      ; 92         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 115      ; 93         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 116      ; 94         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 117      ; 95         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 118      ; 96         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 119      ; 97         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 120      ; 98         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 121      ; 99         ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 122      ; 100        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 123      ; 101        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 124      ; 102        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 125      ; 103        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 126      ; 104        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 127      ; 105        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 128      ; 106        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 129      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 130      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 131      ; 107        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 132      ; 108        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 133      ; 109        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 134      ; 110        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 135      ; 111        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 136      ; 112        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 137      ; 113        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 138      ; 114        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 139      ; 115        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 140      ; 116        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 141      ; 117        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 142      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 143      ; 118        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 144      ; 119        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 145      ; 120        ; 3        ; ^CONF_DONE                               ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 146      ; 121        ; 3        ; ^nSTATUS                                 ;        ;              ;         ; --         ;                 ; --       ; --           ;
+; 147      ; 122        ; 3        ; #TCK                                     ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; 148      ; 123        ; 3        ; #TMS                                     ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; 149      ; 124        ; 3        ; #TDO                                     ; output ;              ;         ; --         ;                 ; --       ; --           ;
+; 150      ;            ;          ; GNDG_PLL2                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 151      ;            ;          ; GNDA_PLL2                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 152      ; 125        ; 3        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 153      ; 126        ; 3        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; 154      ;            ;          ; VCCA_PLL2                                ; power  ;              ; 1.5V    ; --         ;                 ; --       ; --           ;
+; 155      ; 127        ; 3        ; #TDI                                     ; input  ;              ;         ; --         ;                 ; --       ; --           ;
+; 156      ; 128        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 157      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 158      ; 129        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 159      ; 130        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 160      ; 131        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 161      ; 132        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 162      ; 133        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 163      ; 134        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 164      ; 135        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 165      ; 136        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 166      ; 137        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 167      ; 138        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 168      ; 139        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 169      ; 140        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 170      ; 141        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 171      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 172      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 173      ; 142        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 174      ; 143        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 175      ; 144        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 176      ; 145        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 177      ; 146        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 178      ; 147        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 179      ; 148        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 180      ; 149        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 181      ; 150        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 182      ; 151        ; 2        ; to38[0]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 183      ; 152        ; 2        ; to38[1]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 184      ; 153        ; 2        ; to38[2]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 185      ; 154        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 186      ; 155        ; 2        ; qg                                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 187      ; 156        ; 2        ; qf                                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 188      ; 157        ; 2        ; qe                                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 189      ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 190      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 191      ;            ;          ; VCCINT                                   ; power  ;              ; 1.5V    ; --         ;                 ; --       ; --           ;
+; 192      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 193      ; 158        ; 2        ; qd                                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 194      ; 159        ; 2        ; qc                                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 195      ; 160        ; 2        ; qb                                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 196      ; 161        ; 2        ; qa                                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 197      ; 162        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 198      ; 163        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 199      ; 164        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 200      ; 165        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 201      ; 166        ; 2        ; voice                                    ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; 202      ; 167        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 203      ; 168        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 204      ; 169        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 205      ; 170        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 206      ; 171        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 207      ; 172        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 208      ; 173        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 209      ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 210      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 211      ;            ;          ; VCCINT                                   ; power  ;              ; 1.5V    ; --         ;                 ; --       ; --           ;
+; 212      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 213      ; 174        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 214      ; 175        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 215      ; 176        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 216      ; 177        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 217      ; 178        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 218      ; 179        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 219      ; 180        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 220      ; 181        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 221      ; 182        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 222      ; 183        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 223      ; 184        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 224      ; 185        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 225      ; 186        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 226      ; 187        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 227      ; 188        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 228      ; 189        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 229      ;            ;          ; VCCINT                                   ; power  ;              ; 1.5V    ; --         ;                 ; --       ; --           ;
+; 230      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 231      ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
+; 232      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
+; 233      ; 190        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 234      ; 191        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 235      ; 192        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 236      ; 193        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 237      ; 194        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 238      ; 195        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 239      ; 196        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 240      ; 197        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
++----------+------------+----------+------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++------------------------------------------------------------------+
+; Output Pin Default Load For Reported TCO                         ;
++---------------------+-------+------------------------------------+
+; I/O Standard        ; Load  ; Termination Resistance             ;
++---------------------+-------+------------------------------------+
+; 3.3-V LVTTL         ; 10 pF ; Not Available                      ;
+; 3.3-V LVCMOS        ; 10 pF ; Not Available                      ;
+; 2.5 V               ; 10 pF ; Not Available                      ;
+; 1.8 V               ; 10 pF ; Not Available                      ;
+; 1.5 V               ; 10 pF ; Not Available                      ;
+; SSTL-3 Class I      ; 30 pF ; 50 Ohm (Parallel), 25 Ohm (Serial) ;
+; SSTL-3 Class II     ; 30 pF ; 25 Ohm (Parallel), 25 Ohm (Serial) ;
+; SSTL-2 Class I      ; 30 pF ; 50 Ohm (Parallel), 25 Ohm (Serial) ;
+; SSTL-2 Class II     ; 30 pF ; 25 Ohm (Parallel), 25 Ohm (Serial) ;
+; Differential SSTL-2 ; 10 pF ; (See SSTL-2)                       ;
+; 3.3-V PCI           ; 10 pF ; 25 Ohm (Parallel)                  ;
+; LVDS                ; 4 pF  ; 100 Ohm (Differential)             ;
+; RSDS                ; 10 pF ; 100 Ohm (Differential)             ;
++---------------------+-------+------------------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                       ;
++--------------------------------------------+-------------+--------------+-------------+------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                 ; Logic Cells ; LC Registers ; Memory Bits ; M4Ks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                                ; Library Name ;
++--------------------------------------------+-------------+--------------+-------------+------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |daocheleida                               ; 1033 (0)    ; 132          ; 0           ; 0    ; 14   ; 0            ; 901 (0)      ; 16 (0)            ; 116 (0)          ; 497 (0)         ; 6 (0)      ; |daocheleida                                                                                                                                       ; work         ;
+;    |7449:inst5|                            ; 7 (7)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |daocheleida|7449:inst5                                                                                                                            ; work         ;
+;    |average:inst4|                         ; 195 (36)    ; 29           ; 0           ; 0    ; 0    ; 0            ; 166 (7)      ; 0 (0)             ; 29 (29)          ; 107 (28)        ; 0 (0)      ; |daocheleida|average:inst4                                                                                                                         ; work         ;
+;       |lpm_divide:Div0|                    ; 159 (0)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 159 (0)      ; 0 (0)             ; 0 (0)            ; 79 (0)          ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0                                                                                                         ; work         ;
+;          |lpm_divide_o6m:auto_generated|   ; 159 (0)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 159 (0)      ; 0 (0)             ; 0 (0)            ; 79 (0)          ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated                                                                           ; work         ;
+;             |sign_div_unsign_klh:divider|  ; 159 (0)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 159 (0)      ; 0 (0)             ; 0 (0)            ; 79 (0)          ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider                                               ; work         ;
+;                |alt_u_div_sqe:divider|     ; 159 (80)    ; 0            ; 0           ; 0    ; 0    ; 0            ; 159 (80)     ; 0 (0)             ; 0 (0)            ; 79 (0)          ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider                         ; work         ;
+;                   |add_sub_6dc:add_sub_3|  ; 7 (7)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_6dc:add_sub_3   ; work         ;
+;                   |add_sub_7dc:add_sub_10| ; 8 (8)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_10  ; work         ;
+;                   |add_sub_7dc:add_sub_11| ; 8 (8)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_11  ; work         ;
+;                   |add_sub_7dc:add_sub_12| ; 8 (8)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_12  ; work         ;
+;                   |add_sub_7dc:add_sub_4|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_4   ; work         ;
+;                   |add_sub_7dc:add_sub_5|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_5   ; work         ;
+;                   |add_sub_7dc:add_sub_6|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_6   ; work         ;
+;                   |add_sub_7dc:add_sub_7|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_7   ; work         ;
+;                   |add_sub_7dc:add_sub_8|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_8   ; work         ;
+;                   |add_sub_7dc:add_sub_9|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |daocheleida|average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_9   ; work         ;
+;    |disout:inst3|                          ; 388 (38)    ; 31           ; 0           ; 0    ; 0    ; 0            ; 357 (7)      ; 1 (1)             ; 30 (30)          ; 187 (13)        ; 2 (0)      ; |daocheleida|disout:inst3                                                                                                                          ; work         ;
+;       |lpm_divide:Div0|                    ; 91 (0)      ; 0            ; 0           ; 0    ; 0    ; 0            ; 91 (0)       ; 0 (0)             ; 0 (0)            ; 47 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0                                                                                                          ; work         ;
+;          |lpm_divide_l6m:auto_generated|   ; 91 (0)      ; 0            ; 0           ; 0    ; 0    ; 0            ; 91 (0)       ; 0 (0)             ; 0 (0)            ; 47 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated                                                                            ; work         ;
+;             |sign_div_unsign_hlh:divider|  ; 91 (0)      ; 0            ; 0           ; 0    ; 0    ; 0            ; 91 (0)       ; 0 (0)             ; 0 (0)            ; 47 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider                                                ; work         ;
+;                |alt_u_div_mqe:divider|     ; 91 (44)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 91 (44)      ; 0 (0)             ; 0 (0)            ; 47 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider                          ; work         ;
+;                   |add_sub_6dc:add_sub_3|  ; 5 (5)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_6dc:add_sub_3    ; work         ;
+;                   |add_sub_7dc:add_sub_10| ; 4 (4)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 4 (4)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_10   ; work         ;
+;                   |add_sub_7dc:add_sub_4|  ; 6 (6)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_4    ; work         ;
+;                   |add_sub_7dc:add_sub_5|  ; 6 (6)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_5    ; work         ;
+;                   |add_sub_7dc:add_sub_6|  ; 6 (6)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_6    ; work         ;
+;                   |add_sub_7dc:add_sub_7|  ; 6 (6)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_7    ; work         ;
+;                   |add_sub_7dc:add_sub_8|  ; 7 (7)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_8    ; work         ;
+;                   |add_sub_7dc:add_sub_9|  ; 7 (7)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_9    ; work         ;
+;       |lpm_divide:Div1|                    ; 43 (0)      ; 0            ; 0           ; 0    ; 0    ; 0            ; 43 (0)       ; 0 (0)             ; 0 (0)            ; 21 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div1                                                                                                          ; work         ;
+;          |lpm_divide_a5m:auto_generated|   ; 43 (0)      ; 0            ; 0           ; 0    ; 0    ; 0            ; 43 (0)       ; 0 (0)             ; 0 (0)            ; 21 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div1|lpm_divide_a5m:auto_generated                                                                            ; work         ;
+;             |sign_div_unsign_6kh:divider|  ; 43 (0)      ; 0            ; 0           ; 0    ; 0    ; 0            ; 43 (0)       ; 0 (0)             ; 0 (0)            ; 21 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div1|lpm_divide_a5m:auto_generated|sign_div_unsign_6kh:divider                                                ; work         ;
+;                |alt_u_div_0oe:divider|     ; 43 (20)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 43 (20)      ; 0 (0)             ; 0 (0)            ; 21 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div1|lpm_divide_a5m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_0oe:divider                          ; work         ;
+;                   |add_sub_6dc:add_sub_3|  ; 5 (5)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 3 (3)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div1|lpm_divide_a5m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_0oe:divider|add_sub_6dc:add_sub_3    ; work         ;
+;                   |add_sub_7dc:add_sub_4|  ; 7 (7)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div1|lpm_divide_a5m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_0oe:divider|add_sub_7dc:add_sub_4    ; work         ;
+;                   |add_sub_7dc:add_sub_5|  ; 7 (7)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div1|lpm_divide_a5m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_0oe:divider|add_sub_7dc:add_sub_5    ; work         ;
+;                   |add_sub_7dc:add_sub_6|  ; 4 (4)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 4 (4)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div1|lpm_divide_a5m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_0oe:divider|add_sub_7dc:add_sub_6    ; work         ;
+;       |lpm_divide:Div2|                    ; 4 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 4 (0)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div2                                                                                                          ; work         ;
+;          |lpm_divide_75m:auto_generated|   ; 4 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 4 (0)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div2|lpm_divide_75m:auto_generated                                                                            ; work         ;
+;             |sign_div_unsign_3kh:divider|  ; 4 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 4 (0)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div2|lpm_divide_75m:auto_generated|sign_div_unsign_3kh:divider                                                ; work         ;
+;                |alt_u_div_qne:divider|     ; 4 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 4 (0)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div2|lpm_divide_75m:auto_generated|sign_div_unsign_3kh:divider|alt_u_div_qne:divider                          ; work         ;
+;                   |add_sub_6dc:add_sub_3|  ; 4 (4)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 4 (4)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Div2|lpm_divide_75m:auto_generated|sign_div_unsign_3kh:divider|alt_u_div_qne:divider|add_sub_6dc:add_sub_3    ; work         ;
+;       |lpm_divide:Mod1|                    ; 4 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod1                                                                                                          ; work         ;
+;          |lpm_divide_atl:auto_generated|   ; 4 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod1|lpm_divide_atl:auto_generated                                                                            ; work         ;
+;             |sign_div_unsign_3kh:divider|  ; 4 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod1|lpm_divide_atl:auto_generated|sign_div_unsign_3kh:divider                                                ; work         ;
+;                |alt_u_div_qne:divider|     ; 4 (0)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod1|lpm_divide_atl:auto_generated|sign_div_unsign_3kh:divider|alt_u_div_qne:divider                          ; work         ;
+;                   |add_sub_6dc:add_sub_3|  ; 4 (4)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod1|lpm_divide_atl:auto_generated|sign_div_unsign_3kh:divider|alt_u_div_qne:divider|add_sub_6dc:add_sub_3    ; work         ;
+;       |lpm_divide:Mod2|                    ; 53 (0)      ; 0            ; 0           ; 0    ; 0    ; 0            ; 53 (0)       ; 0 (0)             ; 0 (0)            ; 29 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod2                                                                                                          ; work         ;
+;          |lpm_divide_gtl:auto_generated|   ; 53 (0)      ; 0            ; 0           ; 0    ; 0    ; 0            ; 53 (0)       ; 0 (0)             ; 0 (0)            ; 29 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod2|lpm_divide_gtl:auto_generated                                                                            ; work         ;
+;             |sign_div_unsign_9kh:divider|  ; 53 (0)      ; 0            ; 0           ; 0    ; 0    ; 0            ; 53 (0)       ; 0 (0)             ; 0 (0)            ; 29 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod2|lpm_divide_gtl:auto_generated|sign_div_unsign_9kh:divider                                                ; work         ;
+;                |alt_u_div_6oe:divider|     ; 53 (24)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 53 (24)      ; 0 (0)             ; 0 (0)            ; 29 (0)          ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod2|lpm_divide_gtl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_6oe:divider                          ; work         ;
+;                   |add_sub_6dc:add_sub_3|  ; 5 (5)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod2|lpm_divide_gtl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_6oe:divider|add_sub_6dc:add_sub_3    ; work         ;
+;                   |add_sub_7dc:add_sub_4|  ; 7 (7)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod2|lpm_divide_gtl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_6oe:divider|add_sub_7dc:add_sub_4    ; work         ;
+;                   |add_sub_8dc:add_sub_5|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod2|lpm_divide_gtl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_6oe:divider|add_sub_8dc:add_sub_5    ; work         ;
+;                   |add_sub_9dc:add_sub_6|  ; 9 (9)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod2|lpm_divide_gtl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_6oe:divider|add_sub_9dc:add_sub_6    ; work         ;
+;       |lpm_divide:Mod3|                    ; 155 (0)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 155 (0)      ; 0 (0)             ; 0 (0)            ; 73 (0)          ; 2 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod3                                                                                                          ; work         ;
+;          |lpm_divide_60m:auto_generated|   ; 155 (0)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 155 (0)      ; 0 (0)             ; 0 (0)            ; 73 (0)          ; 2 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated                                                                            ; work         ;
+;             |sign_div_unsign_vmh:divider|  ; 155 (0)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 155 (0)      ; 0 (0)             ; 0 (0)            ; 73 (0)          ; 2 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider                                                ; work         ;
+;                |alt_u_div_ite:divider|     ; 155 (82)    ; 0            ; 0           ; 0    ; 0    ; 0            ; 155 (82)     ; 0 (0)             ; 0 (0)            ; 73 (0)          ; 2 (2)      ; |daocheleida|disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider                          ; work         ;
+;                   |add_sub_6dc:add_sub_3|  ; 6 (6)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 6 (6)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_6dc:add_sub_3    ; work         ;
+;                   |add_sub_7dc:add_sub_4|  ; 7 (7)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 7 (7)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_7dc:add_sub_4    ; work         ;
+;                   |add_sub_8dc:add_sub_5|  ; 8 (8)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_8dc:add_sub_5    ; work         ;
+;                   |add_sub_9dc:add_sub_6|  ; 9 (9)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_9dc:add_sub_6    ; work         ;
+;                   |add_sub_adc:add_sub_7|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_adc:add_sub_7    ; work         ;
+;                   |add_sub_bdc:add_sub_8|  ; 10 (10)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_bdc:add_sub_8    ; work         ;
+;                   |add_sub_jec:add_sub_9|  ; 11 (11)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_jec:add_sub_9    ; work         ;
+;                   |add_sub_kec:add_sub_10| ; 12 (12)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 12 (12)         ; 0 (0)      ; |daocheleida|disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_kec:add_sub_10   ; work         ;
+;    |distance:inst2|                        ; 301 (17)    ; 0            ; 0           ; 0    ; 0    ; 0            ; 301 (17)     ; 0 (0)             ; 0 (0)            ; 146 (17)        ; 1 (0)      ; |daocheleida|distance:inst2                                                                                                                        ; work         ;
+;       |lpm_divide:Div0|                    ; 284 (0)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 284 (0)      ; 0 (0)             ; 0 (0)            ; 129 (0)         ; 1 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0                                                                                                        ; work         ;
+;          |lpm_divide_48m:auto_generated|   ; 284 (0)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 284 (0)      ; 0 (0)             ; 0 (0)            ; 129 (0)         ; 1 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated                                                                          ; work         ;
+;             |sign_div_unsign_0nh:divider|  ; 284 (0)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 284 (0)      ; 0 (0)             ; 0 (0)            ; 129 (0)         ; 1 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider                                              ; work         ;
+;                |alt_u_div_kte:divider|     ; 284 (155)   ; 0            ; 0           ; 0    ; 0    ; 0            ; 284 (155)    ; 0 (0)             ; 0 (0)            ; 129 (0)         ; 1 (1)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider                        ; work         ;
+;                   |add_sub_kec:add_sub_10| ; 10 (10)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 10 (10)         ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10 ; work         ;
+;                   |add_sub_kec:add_sub_11| ; 11 (11)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11 ; work         ;
+;                   |add_sub_kec:add_sub_12| ; 11 (11)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12 ; work         ;
+;                   |add_sub_kec:add_sub_13| ; 11 (11)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13 ; work         ;
+;                   |add_sub_kec:add_sub_14| ; 11 (11)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14 ; work         ;
+;                   |add_sub_kec:add_sub_15| ; 11 (11)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15 ; work         ;
+;                   |add_sub_kec:add_sub_16| ; 11 (11)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_16 ; work         ;
+;                   |add_sub_kec:add_sub_17| ; 11 (11)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17 ; work         ;
+;                   |add_sub_kec:add_sub_18| ; 11 (11)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18 ; work         ;
+;                   |add_sub_kec:add_sub_19| ; 11 (11)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_19 ; work         ;
+;                   |add_sub_kec:add_sub_20| ; 11 (11)     ; 0            ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 11 (11)         ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_20 ; work         ;
+;                   |add_sub_kec:add_sub_21| ; 9 (9)       ; 0            ; 0           ; 0    ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |daocheleida|distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21 ; work         ;
+;    |echocount:inst1|                       ; 39 (39)     ; 32           ; 0           ; 0    ; 0    ; 0            ; 7 (7)        ; 15 (15)           ; 17 (17)          ; 15 (15)         ; 0 (0)      ; |daocheleida|echocount:inst1                                                                                                                       ; work         ;
+;    |jishu:inst|                            ; 42 (42)     ; 18           ; 0           ; 0    ; 0    ; 0            ; 24 (24)      ; 0 (0)             ; 18 (18)          ; 15 (15)         ; 0 (0)      ; |daocheleida|jishu:inst                                                                                                                            ; work         ;
+;    |voice2:inst7|                          ; 39 (39)     ; 11           ; 0           ; 0    ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 11 (11)          ; 17 (17)         ; 0 (0)      ; |daocheleida|voice2:inst7                                                                                                                          ; work         ;
+;    |voice:inst6|                           ; 22 (22)     ; 11           ; 0           ; 0    ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 11 (11)          ; 10 (10)         ; 3 (3)      ; |daocheleida|voice:inst6                                                                                                                           ; work         ;
++--------------------------------------------+-------------+--------------+-------------+------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------+
+; Delay Chain Summary                                                              ;
++---------+----------+---------------+---------------+-----------------------+-----+
+; Name    ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ;
++---------+----------+---------------+---------------+-----------------------+-----+
+; trig    ; Output   ; --            ; --            ; --                    ; --  ;
+; qa      ; Output   ; --            ; --            ; --                    ; --  ;
+; qb      ; Output   ; --            ; --            ; --                    ; --  ;
+; qc      ; Output   ; --            ; --            ; --                    ; --  ;
+; qd      ; Output   ; --            ; --            ; --                    ; --  ;
+; qe      ; Output   ; --            ; --            ; --                    ; --  ;
+; qf      ; Output   ; --            ; --            ; --                    ; --  ;
+; qg      ; Output   ; --            ; --            ; --                    ; --  ;
+; voice   ; Output   ; --            ; --            ; --                    ; --  ;
+; to38[2] ; Output   ; --            ; --            ; --                    ; --  ;
+; to38[1] ; Output   ; --            ; --            ; --                    ; --  ;
+; to38[0] ; Output   ; --            ; --            ; --                    ; --  ;
+; clk     ; Input    ; OFF           ; OFF           ; --                    ; --  ;
+; echo    ; Input    ; ON            ; ON            ; --                    ; --  ;
++---------+----------+---------------+---------------+-----------------------+-----+
+
+
++------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                   ;
++------------------------------------+-------------------+---------+
+; Source Pin / Fanout                ; Pad To Core Index ; Setting ;
++------------------------------------+-------------------+---------+
+; clk                                ;                   ;         ;
+; echo                               ;                   ;         ;
+;      - echocount:inst1|js[1]       ; 0                 ; ON      ;
+;      - echocount:inst1|js[2]       ; 0                 ; ON      ;
+;      - echocount:inst1|js[3]       ; 0                 ; ON      ;
+;      - echocount:inst1|js[4]       ; 0                 ; ON      ;
+;      - echocount:inst1|js[5]       ; 0                 ; ON      ;
+;      - echocount:inst1|js[6]       ; 0                 ; ON      ;
+;      - echocount:inst1|js[7]       ; 0                 ; ON      ;
+;      - echocount:inst1|js[8]       ; 0                 ; ON      ;
+;      - echocount:inst1|js[9]       ; 0                 ; ON      ;
+;      - echocount:inst1|js[10]      ; 0                 ; ON      ;
+;      - echocount:inst1|js[11]      ; 0                 ; ON      ;
+;      - echocount:inst1|js[12]      ; 0                 ; ON      ;
+;      - echocount:inst1|js[13]      ; 0                 ; ON      ;
+;      - echocount:inst1|js[14]      ; 0                 ; ON      ;
+;      - echocount:inst1|js[15]      ; 0                 ; ON      ;
+;      - echocount:inst1|js[0]       ; 0                 ; ON      ;
+;      - echocount:inst1|count[4]~32 ; 0                 ; ON      ;
++------------------------------------+-------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                      ;
++-----------------------------+---------------+---------+---------------------------+--------+----------------------+------------------+
+; Name                        ; Location      ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ;
++-----------------------------+---------------+---------+---------------------------+--------+----------------------+------------------+
+; average:inst4|Equal0~0      ; LC_X31_Y8_N4  ; 25      ; Clock enable              ; no     ; --                   ; --               ;
+; average:inst4|Equal1~0      ; LC_X31_Y8_N6  ; 14      ; Sync. clear               ; no     ; --                   ; --               ;
+; clk                         ; PIN_28        ; 92      ; Clock                     ; yes    ; Global Clock         ; GCLK2            ;
+; disout:inst3|Equal0~2       ; LC_X31_Y17_N6 ; 8       ; Clock enable              ; no     ; --                   ; --               ;
+; echo                        ; PIN_58        ; 17      ; Clock enable              ; no     ; --                   ; --               ;
+; echocount:inst1|count[4]~32 ; LC_X29_Y7_N4  ; 16      ; Clock enable              ; no     ; --                   ; --               ;
+; echocount:inst1|js[15]~31   ; LC_X29_Y6_N2  ; 17      ; Async. clear              ; yes    ; Global Clock         ; GCLK7            ;
+; jishu:inst|Equal0~4         ; LC_X28_Y16_N4 ; 18      ; Async. clear, Async. load ; yes    ; Global Clock         ; GCLK5            ;
+; jishu:inst|clr              ; LC_X8_Y10_N2  ; 30      ; Clock                     ; yes    ; Global Clock         ; GCLK3            ;
+; voice2:inst7|n[0]~40        ; LC_X25_Y15_N4 ; 10      ; Sync. clear               ; no     ; --                   ; --               ;
+; voice:inst6|spks2           ; LC_X19_Y17_N6 ; 13      ; Clock                     ; yes    ; Global Clock         ; GCLK6            ;
++-----------------------------+---------------+---------+---------------------------+--------+----------------------+------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                   ;
++---------------------------+---------------+---------+----------------------+------------------+
+; Name                      ; Location      ; Fan-Out ; Global Resource Used ; Global Line Name ;
++---------------------------+---------------+---------+----------------------+------------------+
+; clk                       ; PIN_28        ; 92      ; Global Clock         ; GCLK2            ;
+; echocount:inst1|js[15]~31 ; LC_X29_Y6_N2  ; 17      ; Global Clock         ; GCLK7            ;
+; jishu:inst|Equal0~4       ; LC_X28_Y16_N4 ; 18      ; Global Clock         ; GCLK5            ;
+; jishu:inst|clr            ; LC_X8_Y10_N2  ; 30      ; Global Clock         ; GCLK3            ;
+; voice:inst6|spks2         ; LC_X19_Y17_N6 ; 13      ; Global Clock         ; GCLK6            ;
++---------------------------+---------------+---------+----------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                                                                                                                     ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Name                                                                                                                                                      ; Fan-Out ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; average:inst4|Equal0~0                                                                                                                                    ; 25      ;
+; disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_bdc:add_sub_8|add_sub_cella[2]~18    ; 24      ;
+; distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_19|add_sub_cella[4]~22 ; 21      ;
+; distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15|add_sub_cella[4]~22 ; 21      ;
+; distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14|add_sub_cella[4]~22 ; 21      ;
+; distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_16|add_sub_cella[4]~22 ; 21      ;
+; distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13|add_sub_cella[4]~22 ; 21      ;
+; distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12|add_sub_cella[4]~22 ; 21      ;
+; distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11|add_sub_cella[4]~22 ; 21      ;
+; distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18|add_sub_cella[4]~22 ; 21      ;
+; distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17|add_sub_cella[4]~22 ; 21      ;
+; disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_adc:add_sub_7|add_sub_cella[2]~16    ; 21      ;
+; distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~22 ; 20      ;
+; disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_jec:add_sub_9|add_sub_cella[2]~20    ; 19      ;
+; disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_9dc:add_sub_6|add_sub_cella[2]~14    ; 18      ;
+; echo                                                                                                                                                      ; 17      ;
+; distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_20|add_sub_cella[4]~22 ; 17      ;
+; echocount:inst1|count[4]~32                                                                                                                               ; 16      ;
+; disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_8dc:add_sub_5|add_sub_cella[2]~12    ; 15      ;
+; average:inst4|Equal1~0                                                                                                                                    ; 14      ;
+; disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_6|add_sub_cella[2]~10    ; 14      ;
+; disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_5|add_sub_cella[2]~10    ; 14      ;
+; disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_4|add_sub_cella[2]~10    ; 14      ;
+; disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_7|add_sub_cella[2]~10    ; 14      ;
+; disout:inst3|lpm_divide:Div1|lpm_divide_a5m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_0oe:divider|add_sub_6dc:add_sub_3|_~2                    ; 12      ;
+; average:inst4|numout[7]                                                                                                                                   ; 12      ;
+; disout:inst3|lpm_divide:Mod3|lpm_divide_60m:auto_generated|sign_div_unsign_vmh:divider|alt_u_div_ite:divider|add_sub_7dc:add_sub_4|add_sub_cella[2]~10    ; 12      ;
+; average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_5|add_sub_cella[1]~10   ; 12      ;
+; average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_11|add_sub_cella[1]~10  ; 12      ;
+; average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_10|add_sub_cella[1]~10  ; 12      ;
+; average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_9|add_sub_cella[1]~10   ; 12      ;
+; average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_8|add_sub_cella[1]~10   ; 12      ;
+; average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_6|add_sub_cella[1]~10   ; 12      ;
+; average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_7|add_sub_cella[1]~10   ; 12      ;
+; average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_7dc:add_sub_4|add_sub_cella[1]~10   ; 12      ;
+; average:inst4|lpm_divide:Div0|lpm_divide_o6m:auto_generated|sign_div_unsign_klh:divider|alt_u_div_sqe:divider|add_sub_6dc:add_sub_3|add_sub_cella[1]~8    ; 12      ;
+; disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_8|add_sub_cella[2]~10    ; 12      ;
+; disout:inst3|lpm_divide:Div1|lpm_divide_a5m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_0oe:divider|add_sub_7dc:add_sub_4|add_sub_cella[2]~10    ; 12      ;
+; disout:inst3|lpm_divide:Mod2|lpm_divide_gtl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_6oe:divider|add_sub_7dc:add_sub_4|add_sub_cella[2]~10    ; 12      ;
+; disout:inst3|lpm_divide:Div0|lpm_divide_l6m:auto_generated|sign_div_unsign_hlh:divider|alt_u_div_mqe:divider|add_sub_7dc:add_sub_9|add_sub_cella[2]~10    ; 12      ;
+; disout:inst3|lpm_divide:Div1|lpm_divide_a5m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_0oe:divider|add_sub_7dc:add_sub_5|add_sub_cella[2]~10    ; 12      ;
+; average:inst4|numout[5]                                                                                                                                   ; 11      ;
+; average:inst4|numout[6]                                                                                                                                   ; 11      ;
+; voice2:inst7|n[0]~40                                                                                                                                      ; 10      ;
+; average:inst4|numout[4]                                                                                                                                   ; 10      ;
+; disout:inst3|sel[1]                                                                                                                                       ; 10      ;
+; disout:inst3|sel[0]                                                                                                                                       ; 10      ;
+; disout:inst3|lpm_divide:Mod2|lpm_divide_gtl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_6oe:divider|add_sub_8dc:add_sub_5|add_sub_cella[2]~12    ; 10      ;
+; disout:inst3|lpm_divide:Mod2|lpm_divide_gtl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_6oe:divider|add_sub_6dc:add_sub_3|add_sub_cella[3]~15    ; 9       ;
+; average:inst4|numout[3]                                                                                                                                   ; 9       ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Interconnect Usage Summary                          ;
++----------------------------+------------------------+
+; Interconnect Resource Type ; Usage                  ;
++----------------------------+------------------------+
+; C4s                        ; 709 / 16,320 ( 4 % )   ;
+; Direct links               ; 225 / 21,944 ( 1 % )   ;
+; Global clocks              ; 5 / 8 ( 63 % )         ;
+; LAB clocks                 ; 31 / 240 ( 13 % )      ;
+; LUT chains                 ; 24 / 5,382 ( < 1 % )   ;
+; Local interconnects        ; 1,210 / 21,944 ( 6 % ) ;
+; M4K buffers                ; 0 / 720 ( 0 % )        ;
+; R4s                        ; 457 / 14,640 ( 3 % )   ;
++----------------------------+------------------------+
+
+
++----------------------------------------------------------------------------+
+; LAB Logic Elements                                                         ;
++--------------------------------------------+-------------------------------+
+; Number of Logic Elements  (Average = 7.83) ; Number of LABs  (Total = 132) ;
++--------------------------------------------+-------------------------------+
+; 1                                          ; 19                            ;
+; 2                                          ; 5                             ;
+; 3                                          ; 3                             ;
+; 4                                          ; 3                             ;
+; 5                                          ; 2                             ;
+; 6                                          ; 3                             ;
+; 7                                          ; 3                             ;
+; 8                                          ; 2                             ;
+; 9                                          ; 2                             ;
+; 10                                         ; 90                            ;
++--------------------------------------------+-------------------------------+
+
+
++--------------------------------------------------------------------+
+; LAB-wide Signals                                                   ;
++------------------------------------+-------------------------------+
+; LAB-wide Signals  (Average = 0.57) ; Number of LABs  (Total = 132) ;
++------------------------------------+-------------------------------+
+; 1 Async. clear                     ; 5                             ;
+; 1 Async. load                      ; 8                             ;
+; 1 Clock                            ; 43                            ;
+; 1 Clock enable                     ; 14                            ;
+; 1 Sync. clear                      ; 3                             ;
+; 2 Clock enables                    ; 2                             ;
++------------------------------------+-------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                         ;
++---------------------------------------------+-------------------------------+
+; Number of Signals Sourced  (Average = 7.05) ; Number of LABs  (Total = 132) ;
++---------------------------------------------+-------------------------------+
+; 0                                           ; 0                             ;
+; 1                                           ; 19                            ;
+; 2                                           ; 6                             ;
+; 3                                           ; 3                             ;
+; 4                                           ; 4                             ;
+; 5                                           ; 5                             ;
+; 6                                           ; 5                             ;
+; 7                                           ; 5                             ;
+; 8                                           ; 28                            ;
+; 9                                           ; 13                            ;
+; 10                                          ; 42                            ;
+; 11                                          ; 1                             ;
+; 12                                          ; 0                             ;
+; 13                                          ; 1                             ;
++---------------------------------------------+-------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                         ;
++-------------------------------------------------+-------------------------------+
+; Number of Signals Sourced Out  (Average = 5.95) ; Number of LABs  (Total = 132) ;
++-------------------------------------------------+-------------------------------+
+; 0                                               ; 0                             ;
+; 1                                               ; 22                            ;
+; 2                                               ; 10                            ;
+; 3                                               ; 3                             ;
+; 4                                               ; 10                            ;
+; 5                                               ; 8                             ;
+; 6                                               ; 12                            ;
+; 7                                               ; 17                            ;
+; 8                                               ; 8                             ;
+; 9                                               ; 22                            ;
+; 10                                              ; 19                            ;
+; 11                                              ; 1                             ;
++-------------------------------------------------+-------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                         ;
++---------------------------------------------+-------------------------------+
+; Number of Distinct Inputs  (Average = 8.66) ; Number of LABs  (Total = 132) ;
++---------------------------------------------+-------------------------------+
+; 0                                           ; 0                             ;
+; 1                                           ; 3                             ;
+; 2                                           ; 15                            ;
+; 3                                           ; 14                            ;
+; 4                                           ; 1                             ;
+; 5                                           ; 7                             ;
+; 6                                           ; 3                             ;
+; 7                                           ; 8                             ;
+; 8                                           ; 7                             ;
+; 9                                           ; 16                            ;
+; 10                                          ; 10                            ;
+; 11                                          ; 8                             ;
+; 12                                          ; 12                            ;
+; 13                                          ; 6                             ;
+; 14                                          ; 4                             ;
+; 15                                          ; 3                             ;
+; 16                                          ; 11                            ;
+; 17                                          ; 4                             ;
++---------------------------------------------+-------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Fitter Device Options                                                   ;
++----------------------------------------------+--------------------------+
+; Option                                       ; Setting                  ;
++----------------------------------------------+--------------------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off                      ;
+; Enable device-wide reset (DEV_CLRn)          ; Off                      ;
+; Enable device-wide output enable (DEV_OE)    ; Off                      ;
+; Enable INIT_DONE output                      ; Off                      ;
+; Configuration scheme                         ; Active Serial            ;
+; Error detection CRC                          ; Off                      ;
+; ASDO,nCSO                                    ; As input tri-stated      ;
+; Reserve all unused pins                      ; As output driving ground ;
+; Base pin-out file on sameframe device        ; Off                      ;
++----------------------------------------------+--------------------------+
+
+
++------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing                      ;
++-----------------+----------------------+-------------------+
+; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
++-----------------+----------------------+-------------------+
+; clk             ; clk                  ; 5.05731           ;
++-----------------+----------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Info: *******************************************************************
+Info: Running Quartus II Fitter
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Dec 22 15:05:43 2017
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off daocheleida -c daocheleida
+Info: Selected device EP1C6Q240C8 for design "daocheleida"
+Info: Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning: Feature LogicLock is not available with your current license
+Info: Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info: Device EP1C12Q240C8 is compatible
+Info: Fitter converted 2 user pins into dedicated programming pins
+    Info: Pin ~nCSO~ is reserved at location 24
+    Info: Pin ~ASDO~ is reserved at location 37
+Info: Fitter is using the Classic Timing Analyzer
+Info: Timing requirements not specified -- quality metrics such as performance and power consumption may be sacrificed to reduce compilation time.
+Extra Info: Performing register packing on registers with non-logic cell location assignments
+Extra Info: Completed register packing on registers with non-logic cell location assignments
+Info: Completed User Assigned Global Signals Promotion Operation
+Info: DQS I/O pins require 0 global routing resources
+Info: Automatically promoted signal "clk" to use Global clock in PIN 28
+Info: Automatically promoted some destinations of signal "jishu:inst|clr" to use Global clock
+    Info: Destination "echocount:inst1|js[15]~31" may be non-global or may not use global clock
+Info: Automatically promoted some destinations of signal "voice:inst6|spks2" to use Global clock
+    Info: Destination "voice:inst6|spks2" may be non-global or may not use global clock
+    Info: Destination "voice2:inst7|voice" may be non-global or may not use global clock
+Info: Automatically promoted signal "jishu:inst|Equal0~4" to use Global clock
+Info: Automatically promoted some destinations of signal "echocount:inst1|js[15]~31" to use Global clock
+    Info: Destination "echocount:inst1|count[4]~32" may be non-global or may not use global clock
+Info: Completed Auto Global Promotion Operation
+Info: Starting register packing
+Extra Info: Started Fast Input/Output/OE register processing
+Extra Info: Finished Fast Input/Output/OE register processing
+Info: Fitter is using Normal packing mode for logic elements with Auto setting for Auto Packed Registers logic option
+Extra Info: Moving registers into I/O cells, LUTs, and RAM blocks to improve timing and density
+Info: Finished moving registers into I/O cells, LUTs, and RAM blocks
+Info: Finished register packing
+Info: Fitter preparation operations ending: elapsed time is 00:00:01
+Info: Fitter placement preparation operations beginning
+Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
+Info: Fitter placement operations beginning
+Info: Fitter placement was successful
+Info: Fitter placement operations ending: elapsed time is 00:00:01
+Info: Slack time is -53.208 ns between source register "echocount:inst1|count[3]" and destination register "average:inst4|count[13]"
+    Info: + Largest register to register requirement is 4.692 ns
+    Info:   Shortest clock path from clock "clk" to destination register is 7.384 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = Unassigned; Fanout = 92; CLK Node = 'clk'
+        Info: 2: + IC(0.751 ns) + CELL(0.935 ns) = 3.155 ns; Loc. = Unassigned; Fanout = 30; REG Node = 'jishu:inst|clr'
+        Info: 3: + IC(3.518 ns) + CELL(0.711 ns) = 7.384 ns; Loc. = Unassigned; Fanout = 5; REG Node = 'average:inst4|count[13]'
+        Info: Total cell delay = 3.115 ns ( 42.19 % )
+        Info: Total interconnect delay = 4.269 ns ( 57.81 % )
+    Info:   Longest clock path from clock "clk" to destination register is 7.384 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = Unassigned; Fanout = 92; CLK Node = 'clk'
+        Info: 2: + IC(0.751 ns) + CELL(0.935 ns) = 3.155 ns; Loc. = Unassigned; Fanout = 30; REG Node = 'jishu:inst|clr'
+        Info: 3: + IC(3.518 ns) + CELL(0.711 ns) = 7.384 ns; Loc. = Unassigned; Fanout = 5; REG Node = 'average:inst4|count[13]'
+        Info: Total cell delay = 3.115 ns ( 42.19 % )
+        Info: Total interconnect delay = 4.269 ns ( 57.81 % )
+    Info:   Shortest clock path from clock "clk" to source register is 2.931 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = Unassigned; Fanout = 92; CLK Node = 'clk'
+        Info: 2: + IC(0.751 ns) + CELL(0.711 ns) = 2.931 ns; Loc. = Unassigned; Fanout = 5; REG Node = 'echocount:inst1|count[3]'
+        Info: Total cell delay = 2.180 ns ( 74.38 % )
+        Info: Total interconnect delay = 0.751 ns ( 25.62 % )
+    Info:   Longest clock path from clock "clk" to source register is 2.931 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = Unassigned; Fanout = 92; CLK Node = 'clk'
+        Info: 2: + IC(0.751 ns) + CELL(0.711 ns) = 2.931 ns; Loc. = Unassigned; Fanout = 5; REG Node = 'echocount:inst1|count[3]'
+        Info: Total cell delay = 2.180 ns ( 74.38 % )
+        Info: Total interconnect delay = 0.751 ns ( 25.62 % )
+    Info:   Micro clock to output delay of source is 0.224 ns
+    Info:   Micro setup delay of destination is 0.037 ns
+    Info: - Longest register to register delay is 57.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = Unassigned; Fanout = 5; REG Node = 'echocount:inst1|count[3]'
+        Info: 2: + IC(1.171 ns) + CELL(0.575 ns) = 1.746 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|Add0~27COUT1_53'
+        Info: 3: + IC(0.000 ns) + CELL(0.080 ns) = 1.826 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|Add0~25COUT1_55'
+        Info: 4: + IC(0.000 ns) + CELL(0.080 ns) = 1.906 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|Add0~23COUT1_57'
+        Info: 5: + IC(0.000 ns) + CELL(0.080 ns) = 1.986 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|Add0~21COUT1_59'
+        Info: 6: + IC(0.000 ns) + CELL(0.258 ns) = 2.244 ns; Loc. = Unassigned; Fanout = 6; COMB Node = 'distance:inst2|Add0~19'
+        Info: 7: + IC(0.000 ns) + CELL(0.679 ns) = 2.923 ns; Loc. = Unassigned; Fanout = 5; COMB Node = 'distance:inst2|Add0~0'
+        Info: 8: + IC(1.083 ns) + CELL(0.575 ns) = 4.581 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[3]~COUTCOUT1_62'
+        Info: 9: + IC(0.000 ns) + CELL(0.608 ns) = 5.189 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~40'
+        Info: 10: + IC(0.384 ns) + CELL(0.575 ns) = 6.148 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~37COUT1_50'
+        Info: 11: + IC(0.000 ns) + CELL(0.080 ns) = 6.228 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~31COUT1_52'
+        Info: 12: + IC(0.000 ns) + CELL(0.080 ns) = 6.308 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~35COUT1_54'
+        Info: 13: + IC(0.000 ns) + CELL(0.080 ns) = 6.388 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~33COUT1_56'
+        Info: 14: + IC(0.000 ns) + CELL(0.258 ns) = 6.646 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~29'
+        Info: 15: + IC(0.000 ns) + CELL(0.679 ns) = 7.325 ns; Loc. = Unassigned; Fanout = 20; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~22'
+        Info: 16: + IC(1.012 ns) + CELL(0.590 ns) = 8.927 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[113]~260'
+        Info: 17: + IC(1.148 ns) + CELL(0.432 ns) = 10.507 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11|add_sub_cella[4]~25COUT1_55'
+        Info: 18: + IC(0.000 ns) + CELL(0.080 ns) = 10.587 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11|add_sub_cella[4]~35COUT1_57'
+        Info: 19: + IC(0.000 ns) + CELL(0.080 ns) = 10.667 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11|add_sub_cella[4]~39COUT1_59'
+        Info: 20: + IC(0.000 ns) + CELL(0.258 ns) = 10.925 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11|add_sub_cella[4]~37'
+        Info: 21: + IC(0.000 ns) + CELL(0.679 ns) = 11.604 ns; Loc. = Unassigned; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11|add_sub_cella[4]~22'
+        Info: 22: + IC(1.097 ns) + CELL(0.590 ns) = 13.291 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[124]~238'
+        Info: 23: + IC(1.231 ns) + CELL(0.432 ns) = 14.954 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12|add_sub_cella[4]~29COUT1_55'
+        Info: 24: + IC(0.000 ns) + CELL(0.080 ns) = 15.034 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12|add_sub_cella[4]~25COUT1_57'
+        Info: 25: + IC(0.000 ns) + CELL(0.080 ns) = 15.114 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12|add_sub_cella[4]~33COUT1_59'
+        Info: 26: + IC(0.000 ns) + CELL(0.258 ns) = 15.372 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12|add_sub_cella[4]~37'
+        Info: 27: + IC(0.000 ns) + CELL(0.679 ns) = 16.051 ns; Loc. = Unassigned; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12|add_sub_cella[4]~22'
+        Info: 28: + IC(0.745 ns) + CELL(0.590 ns) = 17.386 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[135]~216'
+        Info: 29: + IC(1.231 ns) + CELL(0.432 ns) = 19.049 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13|add_sub_cella[4]~37COUT1_55'
+        Info: 30: + IC(0.000 ns) + CELL(0.080 ns) = 19.129 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13|add_sub_cella[4]~29COUT1_57'
+        Info: 31: + IC(0.000 ns) + CELL(0.080 ns) = 19.209 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13|add_sub_cella[4]~25COUT1_59'
+        Info: 32: + IC(0.000 ns) + CELL(0.258 ns) = 19.467 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13|add_sub_cella[4]~33'
+        Info: 33: + IC(0.000 ns) + CELL(0.679 ns) = 20.146 ns; Loc. = Unassigned; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13|add_sub_cella[4]~22'
+        Info: 34: + IC(1.087 ns) + CELL(0.590 ns) = 21.823 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[146]~194'
+        Info: 35: + IC(1.142 ns) + CELL(0.432 ns) = 23.397 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14|add_sub_cella[4]~37COUT1_55'
+        Info: 36: + IC(0.000 ns) + CELL(0.080 ns) = 23.477 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14|add_sub_cella[4]~35COUT1_57'
+        Info: 37: + IC(0.000 ns) + CELL(0.080 ns) = 23.557 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14|add_sub_cella[4]~29COUT1_59'
+        Info: 38: + IC(0.000 ns) + CELL(0.258 ns) = 23.815 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14|add_sub_cella[4]~25'
+        Info: 39: + IC(0.000 ns) + CELL(0.679 ns) = 24.494 ns; Loc. = Unassigned; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14|add_sub_cella[4]~22'
+        Info: 40: + IC(1.080 ns) + CELL(0.590 ns) = 26.164 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[157]~172'
+        Info: 41: + IC(1.146 ns) + CELL(0.432 ns) = 27.742 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15|add_sub_cella[4]~37COUT1_55'
+        Info: 42: + IC(0.000 ns) + CELL(0.080 ns) = 27.822 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15|add_sub_cella[4]~35COUT1_57'
+        Info: 43: + IC(0.000 ns) + CELL(0.080 ns) = 27.902 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15|add_sub_cella[4]~33COUT1_59'
+        Info: 44: + IC(0.000 ns) + CELL(0.258 ns) = 28.160 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15|add_sub_cella[4]~29'
+        Info: 45: + IC(0.000 ns) + CELL(0.679 ns) = 28.839 ns; Loc. = Unassigned; Fanout = 22; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15|add_sub_cella[4]~22'
+        Info: 46: + IC(1.563 ns) + CELL(0.114 ns) = 30.516 ns; Loc. = Unassigned; Fanout = 4; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[173]~488'
+        Info: 47: + IC(1.417 ns) + CELL(0.575 ns) = 32.508 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_16|add_sub_cella[4]~25COUT1_63'
+        Info: 48: + IC(0.000 ns) + CELL(0.080 ns) = 32.588 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_16|add_sub_cella[4]~27COUT1_65'
+        Info: 49: + IC(0.000 ns) + CELL(0.608 ns) = 33.196 ns; Loc. = Unassigned; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_16|add_sub_cella[4]~22'
+        Info: 50: + IC(0.780 ns) + CELL(0.590 ns) = 34.566 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[179]~128'
+        Info: 51: + IC(1.244 ns) + CELL(0.432 ns) = 36.242 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17|add_sub_cella[4]~37COUT1_55'
+        Info: 52: + IC(0.000 ns) + CELL(0.080 ns) = 36.322 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17|add_sub_cella[4]~35COUT1_57'
+        Info: 53: + IC(0.000 ns) + CELL(0.080 ns) = 36.402 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17|add_sub_cella[4]~33COUT1_59'
+        Info: 54: + IC(0.000 ns) + CELL(0.258 ns) = 36.660 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17|add_sub_cella[4]~31'
+        Info: 55: + IC(0.000 ns) + CELL(0.679 ns) = 37.339 ns; Loc. = Unassigned; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17|add_sub_cella[4]~22'
+        Info: 56: + IC(1.100 ns) + CELL(0.590 ns) = 39.029 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[190]~106'
+        Info: 57: + IC(1.142 ns) + CELL(0.432 ns) = 40.603 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18|add_sub_cella[4]~37COUT1_55'
+        Info: 58: + IC(0.000 ns) + CELL(0.080 ns) = 40.683 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18|add_sub_cella[4]~35COUT1_57'
+        Info: 59: + IC(0.000 ns) + CELL(0.080 ns) = 40.763 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18|add_sub_cella[4]~33COUT1_59'
+        Info: 60: + IC(0.000 ns) + CELL(0.258 ns) = 41.021 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18|add_sub_cella[4]~31'
+        Info: 61: + IC(0.000 ns) + CELL(0.679 ns) = 41.700 ns; Loc. = Unassigned; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18|add_sub_cella[4]~22'
+        Info: 62: + IC(1.256 ns) + CELL(0.114 ns) = 43.070 ns; Loc. = Unassigned; Fanout = 4; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[205]~526'
+        Info: 63: + IC(1.832 ns) + CELL(0.575 ns) = 45.477 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_19|add_sub_cella[4]~29COUT1_61'
+        Info: 64: + IC(0.000 ns) + CELL(0.080 ns) = 45.557 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_19|add_sub_cella[4]~27COUT1_63'
+        Info: 65: + IC(0.000 ns) + CELL(0.080 ns) = 45.637 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_19|add_sub_cella[4]~25COUT1_65'
+        Info: 66: + IC(0.000 ns) + CELL(0.608 ns) = 46.245 ns; Loc. = Unassigned; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_19|add_sub_cella[4]~22'
+        Info: 67: + IC(1.545 ns) + CELL(0.114 ns) = 47.904 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[215]~536'
+        Info: 68: + IC(0.994 ns) + CELL(0.838 ns) = 49.736 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_20|add_sub_cella[4]~31'
+        Info: 69: + IC(0.000 ns) + CELL(0.679 ns) = 50.415 ns; Loc. = Unassigned; Fanout = 18; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_20|add_sub_cella[4]~22'
+        Info: 70: + IC(1.207 ns) + CELL(0.114 ns) = 51.736 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[222]~30'
+        Info: 71: + IC(1.413 ns) + CELL(0.575 ns) = 53.724 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~39COUT1_49'
+        Info: 72: + IC(0.000 ns) + CELL(0.080 ns) = 53.804 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~37COUT1_51'
+        Info: 73: + IC(0.000 ns) + CELL(0.080 ns) = 53.884 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~35COUT1_53'
+        Info: 74: + IC(0.000 ns) + CELL(0.080 ns) = 53.964 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~33COUT1_55'
+        Info: 75: + IC(0.000 ns) + CELL(0.258 ns) = 54.222 ns; Loc. = Unassigned; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~31'
+        Info: 76: + IC(0.000 ns) + CELL(0.679 ns) = 54.901 ns; Loc. = Unassigned; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~22'
+        Info: 77: + IC(0.994 ns) + CELL(0.564 ns) = 56.459 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'average:inst4|count[0]~41'
+        Info: 78: + IC(0.000 ns) + CELL(0.271 ns) = 56.730 ns; Loc. = Unassigned; Fanout = 6; COMB Node = 'average:inst4|count[1]~39'
+        Info: 79: + IC(0.000 ns) + CELL(0.136 ns) = 56.866 ns; Loc. = Unassigned; Fanout = 6; COMB Node = 'average:inst4|count[6]~33'
+        Info: 80: + IC(0.000 ns) + CELL(0.136 ns) = 57.002 ns; Loc. = Unassigned; Fanout = 2; COMB Node = 'average:inst4|count[11]~23'
+        Info: 81: + IC(0.000 ns) + CELL(0.898 ns) = 57.900 ns; Loc. = Unassigned; Fanout = 5; REG Node = 'average:inst4|count[13]'
+        Info: Total cell delay = 27.856 ns ( 48.11 % )
+        Info: Total interconnect delay = 30.044 ns ( 51.89 % )
+Info: Estimated most critical path is register to register delay of 57.900 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LAB_X28_Y9; Fanout = 5; REG Node = 'echocount:inst1|count[3]'
+    Info: 2: + IC(1.171 ns) + CELL(0.575 ns) = 1.746 ns; Loc. = LAB_X28_Y6; Fanout = 2; COMB Node = 'distance:inst2|Add0~27COUT1_53'
+    Info: 3: + IC(0.000 ns) + CELL(0.080 ns) = 1.826 ns; Loc. = LAB_X28_Y6; Fanout = 2; COMB Node = 'distance:inst2|Add0~25COUT1_55'
+    Info: 4: + IC(0.000 ns) + CELL(0.080 ns) = 1.906 ns; Loc. = LAB_X28_Y6; Fanout = 2; COMB Node = 'distance:inst2|Add0~23COUT1_57'
+    Info: 5: + IC(0.000 ns) + CELL(0.080 ns) = 1.986 ns; Loc. = LAB_X28_Y6; Fanout = 2; COMB Node = 'distance:inst2|Add0~21COUT1_59'
+    Info: 6: + IC(0.000 ns) + CELL(0.258 ns) = 2.244 ns; Loc. = LAB_X28_Y6; Fanout = 6; COMB Node = 'distance:inst2|Add0~19'
+    Info: 7: + IC(0.000 ns) + CELL(0.679 ns) = 2.923 ns; Loc. = LAB_X28_Y5; Fanout = 5; COMB Node = 'distance:inst2|Add0~0'
+    Info: 8: + IC(1.083 ns) + CELL(0.575 ns) = 4.581 ns; Loc. = LAB_X28_Y7; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[3]~COUTCOUT1_62'
+    Info: 9: + IC(0.000 ns) + CELL(0.608 ns) = 5.189 ns; Loc. = LAB_X28_Y7; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~40'
+    Info: 10: + IC(0.384 ns) + CELL(0.575 ns) = 6.148 ns; Loc. = LAB_X28_Y7; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~37COUT1_50'
+    Info: 11: + IC(0.000 ns) + CELL(0.080 ns) = 6.228 ns; Loc. = LAB_X28_Y7; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~31COUT1_52'
+    Info: 12: + IC(0.000 ns) + CELL(0.080 ns) = 6.308 ns; Loc. = LAB_X28_Y7; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~35COUT1_54'
+    Info: 13: + IC(0.000 ns) + CELL(0.080 ns) = 6.388 ns; Loc. = LAB_X28_Y7; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~33COUT1_56'
+    Info: 14: + IC(0.000 ns) + CELL(0.258 ns) = 6.646 ns; Loc. = LAB_X28_Y7; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~29'
+    Info: 15: + IC(0.000 ns) + CELL(0.679 ns) = 7.325 ns; Loc. = LAB_X28_Y7; Fanout = 20; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_10|add_sub_cella[4]~22'
+    Info: 16: + IC(1.012 ns) + CELL(0.590 ns) = 8.927 ns; Loc. = LAB_X22_Y7; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[113]~260'
+    Info: 17: + IC(1.148 ns) + CELL(0.432 ns) = 10.507 ns; Loc. = LAB_X26_Y7; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11|add_sub_cella[4]~25COUT1_55'
+    Info: 18: + IC(0.000 ns) + CELL(0.080 ns) = 10.587 ns; Loc. = LAB_X26_Y7; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11|add_sub_cella[4]~35COUT1_57'
+    Info: 19: + IC(0.000 ns) + CELL(0.080 ns) = 10.667 ns; Loc. = LAB_X26_Y7; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11|add_sub_cella[4]~39COUT1_59'
+    Info: 20: + IC(0.000 ns) + CELL(0.258 ns) = 10.925 ns; Loc. = LAB_X26_Y7; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11|add_sub_cella[4]~37'
+    Info: 21: + IC(0.000 ns) + CELL(0.679 ns) = 11.604 ns; Loc. = LAB_X26_Y7; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_11|add_sub_cella[4]~22'
+    Info: 22: + IC(1.097 ns) + CELL(0.590 ns) = 13.291 ns; Loc. = LAB_X22_Y5; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[124]~238'
+    Info: 23: + IC(1.231 ns) + CELL(0.432 ns) = 14.954 ns; Loc. = LAB_X23_Y7; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12|add_sub_cella[4]~29COUT1_55'
+    Info: 24: + IC(0.000 ns) + CELL(0.080 ns) = 15.034 ns; Loc. = LAB_X23_Y7; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12|add_sub_cella[4]~25COUT1_57'
+    Info: 25: + IC(0.000 ns) + CELL(0.080 ns) = 15.114 ns; Loc. = LAB_X23_Y7; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12|add_sub_cella[4]~33COUT1_59'
+    Info: 26: + IC(0.000 ns) + CELL(0.258 ns) = 15.372 ns; Loc. = LAB_X23_Y7; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12|add_sub_cella[4]~37'
+    Info: 27: + IC(0.000 ns) + CELL(0.679 ns) = 16.051 ns; Loc. = LAB_X23_Y7; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_12|add_sub_cella[4]~22'
+    Info: 28: + IC(0.745 ns) + CELL(0.590 ns) = 17.386 ns; Loc. = LAB_X24_Y6; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[135]~216'
+    Info: 29: + IC(1.231 ns) + CELL(0.432 ns) = 19.049 ns; Loc. = LAB_X23_Y8; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13|add_sub_cella[4]~37COUT1_55'
+    Info: 30: + IC(0.000 ns) + CELL(0.080 ns) = 19.129 ns; Loc. = LAB_X23_Y8; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13|add_sub_cella[4]~29COUT1_57'
+    Info: 31: + IC(0.000 ns) + CELL(0.080 ns) = 19.209 ns; Loc. = LAB_X23_Y8; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13|add_sub_cella[4]~25COUT1_59'
+    Info: 32: + IC(0.000 ns) + CELL(0.258 ns) = 19.467 ns; Loc. = LAB_X23_Y8; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13|add_sub_cella[4]~33'
+    Info: 33: + IC(0.000 ns) + CELL(0.679 ns) = 20.146 ns; Loc. = LAB_X23_Y8; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_13|add_sub_cella[4]~22'
+    Info: 34: + IC(1.087 ns) + CELL(0.590 ns) = 21.823 ns; Loc. = LAB_X25_Y6; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[146]~194'
+    Info: 35: + IC(1.142 ns) + CELL(0.432 ns) = 23.397 ns; Loc. = LAB_X23_Y6; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14|add_sub_cella[4]~37COUT1_55'
+    Info: 36: + IC(0.000 ns) + CELL(0.080 ns) = 23.477 ns; Loc. = LAB_X23_Y6; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14|add_sub_cella[4]~35COUT1_57'
+    Info: 37: + IC(0.000 ns) + CELL(0.080 ns) = 23.557 ns; Loc. = LAB_X23_Y6; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14|add_sub_cella[4]~29COUT1_59'
+    Info: 38: + IC(0.000 ns) + CELL(0.258 ns) = 23.815 ns; Loc. = LAB_X23_Y6; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14|add_sub_cella[4]~25'
+    Info: 39: + IC(0.000 ns) + CELL(0.679 ns) = 24.494 ns; Loc. = LAB_X23_Y6; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_14|add_sub_cella[4]~22'
+    Info: 40: + IC(1.080 ns) + CELL(0.590 ns) = 26.164 ns; Loc. = LAB_X27_Y5; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[157]~172'
+    Info: 41: + IC(1.146 ns) + CELL(0.432 ns) = 27.742 ns; Loc. = LAB_X24_Y5; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15|add_sub_cella[4]~37COUT1_55'
+    Info: 42: + IC(0.000 ns) + CELL(0.080 ns) = 27.822 ns; Loc. = LAB_X24_Y5; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15|add_sub_cella[4]~35COUT1_57'
+    Info: 43: + IC(0.000 ns) + CELL(0.080 ns) = 27.902 ns; Loc. = LAB_X24_Y5; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15|add_sub_cella[4]~33COUT1_59'
+    Info: 44: + IC(0.000 ns) + CELL(0.258 ns) = 28.160 ns; Loc. = LAB_X24_Y5; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15|add_sub_cella[4]~29'
+    Info: 45: + IC(0.000 ns) + CELL(0.679 ns) = 28.839 ns; Loc. = LAB_X24_Y5; Fanout = 22; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_15|add_sub_cella[4]~22'
+    Info: 46: + IC(1.563 ns) + CELL(0.114 ns) = 30.516 ns; Loc. = LAB_X22_Y7; Fanout = 4; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[173]~488'
+    Info: 47: + IC(1.417 ns) + CELL(0.575 ns) = 32.508 ns; Loc. = LAB_X26_Y5; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_16|add_sub_cella[4]~25COUT1_63'
+    Info: 48: + IC(0.000 ns) + CELL(0.080 ns) = 32.588 ns; Loc. = LAB_X26_Y5; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_16|add_sub_cella[4]~27COUT1_65'
+    Info: 49: + IC(0.000 ns) + CELL(0.608 ns) = 33.196 ns; Loc. = LAB_X26_Y5; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_16|add_sub_cella[4]~22'
+    Info: 50: + IC(0.780 ns) + CELL(0.590 ns) = 34.566 ns; Loc. = LAB_X27_Y9; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[179]~128'
+    Info: 51: + IC(1.244 ns) + CELL(0.432 ns) = 36.242 ns; Loc. = LAB_X26_Y6; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17|add_sub_cella[4]~37COUT1_55'
+    Info: 52: + IC(0.000 ns) + CELL(0.080 ns) = 36.322 ns; Loc. = LAB_X26_Y6; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17|add_sub_cella[4]~35COUT1_57'
+    Info: 53: + IC(0.000 ns) + CELL(0.080 ns) = 36.402 ns; Loc. = LAB_X26_Y6; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17|add_sub_cella[4]~33COUT1_59'
+    Info: 54: + IC(0.000 ns) + CELL(0.258 ns) = 36.660 ns; Loc. = LAB_X26_Y6; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17|add_sub_cella[4]~31'
+    Info: 55: + IC(0.000 ns) + CELL(0.679 ns) = 37.339 ns; Loc. = LAB_X26_Y6; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_17|add_sub_cella[4]~22'
+    Info: 56: + IC(1.100 ns) + CELL(0.590 ns) = 39.029 ns; Loc. = LAB_X24_Y9; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[190]~106'
+    Info: 57: + IC(1.142 ns) + CELL(0.432 ns) = 40.603 ns; Loc. = LAB_X26_Y9; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18|add_sub_cella[4]~37COUT1_55'
+    Info: 58: + IC(0.000 ns) + CELL(0.080 ns) = 40.683 ns; Loc. = LAB_X26_Y9; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18|add_sub_cella[4]~35COUT1_57'
+    Info: 59: + IC(0.000 ns) + CELL(0.080 ns) = 40.763 ns; Loc. = LAB_X26_Y9; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18|add_sub_cella[4]~33COUT1_59'
+    Info: 60: + IC(0.000 ns) + CELL(0.258 ns) = 41.021 ns; Loc. = LAB_X26_Y9; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18|add_sub_cella[4]~31'
+    Info: 61: + IC(0.000 ns) + CELL(0.679 ns) = 41.700 ns; Loc. = LAB_X26_Y9; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_18|add_sub_cella[4]~22'
+    Info: 62: + IC(1.256 ns) + CELL(0.114 ns) = 43.070 ns; Loc. = LAB_X27_Y5; Fanout = 4; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[205]~526'
+    Info: 63: + IC(1.832 ns) + CELL(0.575 ns) = 45.477 ns; Loc. = LAB_X25_Y10; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_19|add_sub_cella[4]~29COUT1_61'
+    Info: 64: + IC(0.000 ns) + CELL(0.080 ns) = 45.557 ns; Loc. = LAB_X25_Y10; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_19|add_sub_cella[4]~27COUT1_63'
+    Info: 65: + IC(0.000 ns) + CELL(0.080 ns) = 45.637 ns; Loc. = LAB_X25_Y10; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_19|add_sub_cella[4]~25COUT1_65'
+    Info: 66: + IC(0.000 ns) + CELL(0.608 ns) = 46.245 ns; Loc. = LAB_X25_Y10; Fanout = 23; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_19|add_sub_cella[4]~22'
+    Info: 67: + IC(1.545 ns) + CELL(0.114 ns) = 47.904 ns; Loc. = LAB_X27_Y9; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[215]~536'
+    Info: 68: + IC(0.994 ns) + CELL(0.838 ns) = 49.736 ns; Loc. = LAB_X25_Y9; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_20|add_sub_cella[4]~31'
+    Info: 69: + IC(0.000 ns) + CELL(0.679 ns) = 50.415 ns; Loc. = LAB_X25_Y9; Fanout = 18; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_20|add_sub_cella[4]~22'
+    Info: 70: + IC(1.207 ns) + CELL(0.114 ns) = 51.736 ns; Loc. = LAB_X28_Y9; Fanout = 2; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|StageOut[222]~30'
+    Info: 71: + IC(1.413 ns) + CELL(0.575 ns) = 53.724 ns; Loc. = LAB_X25_Y11; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~39COUT1_49'
+    Info: 72: + IC(0.000 ns) + CELL(0.080 ns) = 53.804 ns; Loc. = LAB_X25_Y11; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~37COUT1_51'
+    Info: 73: + IC(0.000 ns) + CELL(0.080 ns) = 53.884 ns; Loc. = LAB_X25_Y11; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~35COUT1_53'
+    Info: 74: + IC(0.000 ns) + CELL(0.080 ns) = 53.964 ns; Loc. = LAB_X25_Y11; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~33COUT1_55'
+    Info: 75: + IC(0.000 ns) + CELL(0.258 ns) = 54.222 ns; Loc. = LAB_X25_Y11; Fanout = 1; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~31'
+    Info: 76: + IC(0.000 ns) + CELL(0.679 ns) = 54.901 ns; Loc. = LAB_X25_Y11; Fanout = 3; COMB Node = 'distance:inst2|lpm_divide:Div0|lpm_divide_48m:auto_generated|sign_div_unsign_0nh:divider|alt_u_div_kte:divider|add_sub_kec:add_sub_21|add_sub_cella[4]~22'
+    Info: 77: + IC(0.994 ns) + CELL(0.564 ns) = 56.459 ns; Loc. = LAB_X23_Y11; Fanout = 2; COMB Node = 'average:inst4|count[0]~41'
+    Info: 78: + IC(0.000 ns) + CELL(0.271 ns) = 56.730 ns; Loc. = LAB_X23_Y11; Fanout = 6; COMB Node = 'average:inst4|count[1]~39'
+    Info: 79: + IC(0.000 ns) + CELL(0.136 ns) = 56.866 ns; Loc. = LAB_X23_Y11; Fanout = 6; COMB Node = 'average:inst4|count[6]~33'
+    Info: 80: + IC(0.000 ns) + CELL(0.136 ns) = 57.002 ns; Loc. = LAB_X23_Y10; Fanout = 2; COMB Node = 'average:inst4|count[11]~23'
+    Info: 81: + IC(0.000 ns) + CELL(0.898 ns) = 57.900 ns; Loc. = LAB_X23_Y10; Fanout = 5; REG Node = 'average:inst4|count[13]'
+    Info: Total cell delay = 27.856 ns ( 48.11 % )
+    Info: Total interconnect delay = 30.044 ns ( 51.89 % )
+Info: Fitter routing operations beginning
+Info: Average interconnect usage is 4% of the available device resources
+    Info: Peak interconnect usage is 8% of the available device resources in the region that extends from location X24_Y0 to location X35_Y10
+Info: Fitter routing operations ending: elapsed time is 00:00:00
+Info: The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
+    Info: Optimizations that may affect the design's routability were skipped
+    Info: Optimizations that may affect the design's timing were skipped
+Info: Completed Fixed Delay Chain Operation
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Info: Completed Auto Delay Chain Operation
+Warning: Following 1 pins have nothing, GND, or VCC driving datain port -- changes to this connectivity may change fitting results
+    Info: Pin to38[2] has VCC driving its datain port
+Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
+Info: Quartus II Fitter was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 231 megabytes
+    Info: Processing ended: Fri Dec 22 15:05:46 2017
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

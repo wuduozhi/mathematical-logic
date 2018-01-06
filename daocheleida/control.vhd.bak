@@ -1,0 +1,24 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+entity control is
+port(
+  a:in std_logic_vector(1 downto 0);
+  
+  clkout:out integer
+  );
+  end entity control;
+  architecture control_arch of control is
+
+begin
+process(a) 
+   begin
+   if a="00" then clkout<=3;
+    elsif a="01" then clkout<=2;
+    elsif a="10" then clkout<=1;
+    else clkout<=0;
+    end if;
+    end process;
+    end control_arch;
+    
+  
