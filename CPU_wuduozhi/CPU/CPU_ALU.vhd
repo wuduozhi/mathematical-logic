@@ -17,7 +17,7 @@ signal c:std_logic:='0';
 signal ss:std_logic:='0';
 
 begin
-	process(s,A,B)
+	process(s,A,B,M)
 	begin
 		if(M='1') then
 			case s is

@@ -18,10 +18,10 @@ begin
 
 	process(LD_PC,IN_PC,clk,Data_in)
 	begin
-		if(clk 'event and clk='1' and IN_PC='1') then
+		if(clk 'event and clk='0' and IN_PC='1') then
 			R_PC<=Data_in;
 		end if;
-		if(LD_PC = '1' and (clk 'event and clk='1')) then
+		if(LD_PC = '1' and (clk 'event and clk='0')) then
 			R_PC<= R_PC+1;
 		end if;
 	end process;
