@@ -1,0 +1,33 @@
+-- PC
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity PC is
+port(
+	busin: in std_logic_vector(7 downto 0);
+	clk, reset, lod_pc, in_pc: in std_logic;
+	pc: out std_logic_vector(7 downto 0));
+end PC;
+
+architecture pc_arch of PC is
+	signal count : std_logic_vector(7 downto 0);
+begin
+	process(clk, reset, lod_pc, in_pc)
+	begin
+		if reset = '1' then
+			count <= "00000000";
+		elsif (clk'event and clk = '0') then
+			if count > "00110111" then 
+				count <= "00000000";
+			elsif lod_pc = '1' then
+				if in_pc = '1' then
+					count <= count + 1;
+				else
+					count <= busin;
+				end if;
+			end if;
+		end if;
+	end process;
+	pc <= count;
+end pc_arch;

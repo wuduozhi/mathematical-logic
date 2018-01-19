@@ -1,0 +1,32 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity CPU_SHIFT is
+port(
+	Data_in    :in std_logic_vector(7 downto 0);
+	F_BUS,FL_BUS,FR_BUS,M:in std_logic;
+	Data_out    :out std_logic_vector(7 downto 0)
+);
+end CPU_SHIFT;
+
+architecture arch of CPU_SHIFT is
+begin
+	process(Data_in,F_BUS,FL_BUS,FR_BUS,M)
+	begin
+		if(M='1') then
+			if(F_BUS='1') then
+				if(FL_BUS='1') then
+					Data_out<=Data_in(6 downto 0) & '0';
+				end if;
+				if(FR_BUS='1') then
+					Data_out<=Data_in(7 downto 1) & '0';
+				end if;
+			else
+				Data_out<=Data_in;
+			end if;
+		else
+			Data_out<="ZZZZZZZZ";
+		end if;
+	end process;
+end arch;

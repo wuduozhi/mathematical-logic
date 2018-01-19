@@ -1,0 +1,33 @@
+-- register
+library ieee;
+use ieee.std_logic_1164.all;
+entity reg is
+port(
+	clk, reset: in std_logic;
+	din: in std_logic_vector(7 downto 0);
+	RE: in std_logic;
+	WE: in std_logic;
+	dreset: in std_logic_vector(7 downto 0);
+	data, dout: out std_logic_vector(7 downto 0));
+end reg;
+
+architecture reg_arch of reg is
+signal s : std_logic_vector(7 downto 0);
+begin
+	process(clk, s, reset, RE, WE)
+	begin
+		if RESET = '1' then 
+			s <= dreset;
+		elsif (clk'event and clk = '1') and WE = '0' then
+			s <= din;
+		else
+			s <= s;
+		end if;
+		if RE = '0' then 
+			dout <= s;
+		else 
+			dout <= "ZZZZZZZZ";
+		end if;
+	end process;
+	data <= s;
+end reg_arch;

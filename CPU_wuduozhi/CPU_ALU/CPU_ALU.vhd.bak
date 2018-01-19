@@ -1,0 +1,49 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+entity CPU_ALU is
+	port(M:in std_logic;
+		s:in std_logic_vector(3 downto 0);
+		A,B:in std_logic_vector(7 downto 0);--r2 use A,r1 use B
+		ALU_out:out std_logic_vector(7 downto 0);
+		C_out,S_out:out std_logic
+		);
+end CPU_ALU;
+
+architecture ALU_architecture of CPU_ALU is
+
+signal c:std_logic:='0';
+signal ss:std_logic:='0';
+
+begin
+	process(s,A,B)
+	begin
+		if(M='1') then
+			case s is
+				when "1111"=>   --move
+					ALU_out<=A;
+				when "1001"=>   --add
+					ALU_out<= A+B;
+					c<=A(7) and B(7) and A(6) and B(6);
+				when "0110"=>
+					ALU_out<= B-A;
+					ss<=	A(7) and B(7);
+				when "1110"=>
+					ALU_out<= A and B;
+				when "0101"=>
+					ALU_out<= not B;
+				when "1010"
+					ALU_out<= B;
+				when others=>
+			end case;
+		else
+			ALU_out<="ZZZZZZZZ";
+		end if;
+	end process;
+	C_out<=c;
+	S_out<=ss;
+end ;		
+
+
+	

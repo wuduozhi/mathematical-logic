@@ -1,0 +1,28 @@
+GED
+
+	Undo Commands
+	     1.	Delete
+	     2.	Insert Bus
+	     3.	Insert Bus
+	     4.	Insert Bus
+	     5.	Properties
+	     6.	Insert Symbol
+	     7.	Delete
+	     8.	Insert Bus
+	     9.	Delete
+	    10.	Insert Bus
+	    11.	Delete
+	    12.	Properties
+	    13.	Insert Bus
+	    14.	Insert Bus
+	    15.	Delete
+	    16.	Insert Bus
+	    17.	Properties
+
+
+RPW
+
+	Undo Commands
+	     1.	||Compilation Report||Flow Summary
+
+

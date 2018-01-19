@@ -1,0 +1,576 @@
+Analysis & Synthesis report for CPU
+Mon Jan 08 10:38:05 2018
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. User-Specified and Inferred Latches
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++-------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status   ; Successful - Mon Jan 08 10:38:05 2018        ;
+; Quartus II Version            ; 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition ;
+; Revision Name                 ; CPU                                          ;
+; Top-level Entity Name         ; CPU                                          ;
+; Family                        ; Stratix II                                   ;
+; Logic utilization             ; N/A                                          ;
+;     Combinational ALUTs       ; 629                                          ;
+;     Dedicated logic registers ; 497                                          ;
+; Total registers               ; 497                                          ;
+; Total pins                    ; 91                                           ;
+; Total virtual pins            ; 0                                            ;
+; Total block memory bits       ; 0                                            ;
+; DSP block 9-bit elements      ; 0                                            ;
+; Total PLLs                    ; 0                                            ;
+; Total DLLs                    ; 0                                            ;
++-------------------------------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Option                                                       ; Setting            ; Default Value      ;
++--------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                        ; CPU                ; CPU                ;
+; Family name                                                  ; Stratix II         ; Stratix II         ;
+; Use Generated Physical Constraints File                      ; Off                ;                    ;
+; Use smart compilation                                        ; Off                ; Off                ;
+; Restructure Multiplexers                                     ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                          ; Off                ; Off                ;
+; Preserve fewer node names                                    ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                    ; Off                ; Off                ;
+; Verilog Version                                              ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                 ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                     ; Auto               ; Auto               ;
+; Safe State Machine                                           ; Off                ; Off                ;
+; Extract Verilog State Machines                               ; On                 ; On                 ;
+; Extract VHDL State Machines                                  ; On                 ; On                 ;
+; Ignore Verilog initial constructs                            ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                   ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops               ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On                 ; On                 ;
+; Parallel Synthesis                                           ; Off                ; Off                ;
+; DSP Block Balancing                                          ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                           ; On                 ; On                 ;
+; Power-Up Don't Care                                          ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                 ; Off                ; Off                ;
+; Remove Duplicate Registers                                   ; On                 ; On                 ;
+; Ignore CARRY Buffers                                         ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                       ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                    ; Off                ; Off                ;
+; Ignore LCELL Buffers                                         ; Off                ; Off                ;
+; Ignore SOFT Buffers                                          ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                               ; Off                ; Off                ;
+; Optimization Technique                                       ; Balanced           ; Balanced           ;
+; Carry Chain Length                                           ; 70                 ; 70                 ;
+; Auto Carry Chains                                            ; On                 ; On                 ;
+; Auto Open-Drain Pins                                         ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                        ; Off                ; Off                ;
+; Auto ROM Replacement                                         ; On                 ; On                 ;
+; Auto RAM Replacement                                         ; On                 ; On                 ;
+; Auto DSP Block Replacement                                   ; On                 ; On                 ;
+; Auto Shift Register Replacement                              ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                ; On                 ; On                 ;
+; Strict RAM Replacement                                       ; Off                ; Off                ;
+; Allow Synchronous Control Signals                            ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                       ; Off                ; Off                ;
+; Auto RAM Block Balancing                                     ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                            ; Off                ; Off                ;
+; Auto Resource Sharing                                        ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                           ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing          ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives            ; Off                ; Off                ;
+; Timing-Driven Synthesis                                      ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report           ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                           ; Off                ; Off                ;
+; Synchronization Register Chain Length                        ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                 ; Normal compilation ; Normal compilation ;
+; HDL message level                                            ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages              ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100                ; 100                ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100                ; 100                ;
+; Clock MUX Protection                                         ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                  ; Off                ; Off                ;
+; Block Design Naming                                          ; Auto               ; Auto               ;
+; SDC constraint protection                                    ; Off                ; Off                ;
+; Synthesis Effort                                             ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                           ; Medium             ; Medium             ;
++--------------------------------------------------------------+--------------------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                            ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------+
+; CPU.bdf                          ; yes             ; User Block Diagram/Schematic File  ; H:/exp/Êý×ÖÂß¼­/CPU_wuduozhi/CPU/CPU.bdf                ;
+; CPU_SM.vhd                       ; yes             ; Auto-Found VHDL File               ; H:/exp/Êý×ÖÂß¼­/CPU_wuduozhi/CPU/CPU_SM.vhd             ;
+; CPU_REGISTER_GROUP.vhd           ; yes             ; Auto-Found VHDL File               ; H:/exp/Êý×ÖÂß¼­/CPU_wuduozhi/CPU/CPU_REGISTER_GROUP.vhd ;
+; cpu_order.vhd                    ; yes             ; Auto-Found VHDL File               ; H:/exp/Êý×ÖÂß¼­/CPU_wuduozhi/CPU/cpu_order.vhd          ;
+; CPU_ALU.vhd                      ; yes             ; Auto-Found VHDL File               ; H:/exp/Êý×ÖÂß¼­/CPU_wuduozhi/CPU/CPU_ALU.vhd            ;
+; CPU_IR_REGISTER.vhd              ; yes             ; Auto-Found VHDL File               ; H:/exp/Êý×ÖÂß¼­/CPU_wuduozhi/CPU/CPU_IR_REGISTER.vhd    ;
+; CPU_RAM.vhd                      ; yes             ; Auto-Found VHDL File               ; H:/exp/Êý×ÖÂß¼­/CPU_wuduozhi/CPU/CPU_RAM.vhd            ;
+; CPU_MUX.vhd                      ; yes             ; Auto-Found VHDL File               ; H:/exp/Êý×ÖÂß¼­/CPU_wuduozhi/CPU/CPU_MUX.vhd            ;
+; CPU_PC.vhd                       ; yes             ; Auto-Found VHDL File               ; H:/exp/Êý×ÖÂß¼­/CPU_wuduozhi/CPU/CPU_PC.vhd             ;
+; CPU_SHIFT.vhd                    ; yes             ; Auto-Found VHDL File               ; H:/exp/Êý×ÖÂß¼­/CPU_wuduozhi/CPU/CPU_SHIFT.vhd          ;
++----------------------------------+-----------------+------------------------------------+---------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++-----------------------------------------------+-------+
+; Resource                                      ; Usage ;
++-----------------------------------------------+-------+
+; Estimated ALUTs Used                          ; 629   ;
+; Dedicated logic registers                     ; 497   ;
+;                                               ;       ;
+; Estimated ALUTs Unavailable                   ; 113   ;
+;                                               ;       ;
+; Total combinational functions                 ; 629   ;
+; Combinational ALUT usage by number of inputs  ;       ;
+;     -- 7 input functions                      ; 0     ;
+;     -- 6 input functions                      ; 213   ;
+;     -- 5 input functions                      ; 65    ;
+;     -- 4 input functions                      ; 27    ;
+;     -- <=3 input functions                    ; 324   ;
+;                                               ;       ;
+; Combinational ALUTs by mode                   ;       ;
+;     -- normal mode                            ; 613   ;
+;     -- extended LUT mode                      ; 0     ;
+;     -- arithmetic mode                        ; 16    ;
+;     -- shared arithmetic mode                 ; 0     ;
+;                                               ;       ;
+; Estimated ALUT/register pairs used            ; 908   ;
+;                                               ;       ;
+; Total registers                               ; 497   ;
+;     -- Dedicated logic registers              ; 497   ;
+;     -- I/O registers                          ; 0     ;
+;                                               ;       ;
+; Estimated ALMs:  partially or completely used ; 454   ;
+;                                               ;       ;
+; I/O pins                                      ; 91    ;
+; Maximum fan-out node                          ; clk   ;
+; Maximum fan-out                               ; 497   ;
+; Total fan-out                                 ; 3896  ;
+; Average fan-out                               ; 3.20  ;
++-----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                          ;
++--------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------+--------------+
+; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Library Name ;
++--------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------+--------------+
+; |CPU                           ; 629 (0)           ; 497 (0)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 91   ; 0            ; |CPU                           ; work         ;
+;    |CPU_ALU:inst|              ; 36 (36)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|CPU_ALU:inst              ; work         ;
+;    |CPU_IR_REGISTER:inst1|     ; 0 (0)             ; 8 (8)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|CPU_IR_REGISTER:inst1     ; work         ;
+;    |CPU_MUX:inst2|             ; 15 (15)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|CPU_MUX:inst2             ; work         ;
+;    |CPU_PC:inst5|              ; 8 (8)             ; 8 (8)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|CPU_PC:inst5              ; work         ;
+;    |CPU_RAM:inst12|            ; 469 (469)         ; 456 (456)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|CPU_RAM:inst12            ; work         ;
+;    |CPU_REGISTER_GROUP:inst17| ; 30 (30)           ; 24 (24)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|CPU_REGISTER_GROUP:inst17 ; work         ;
+;    |CPU_SHIFT:inst8|           ; 35 (35)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|CPU_SHIFT:inst8           ; work         ;
+;    |CPU_SM:inst7|              ; 1 (1)             ; 1 (1)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|CPU_SM:inst7              ; work         ;
+;    |cpu_order:inst6|           ; 35 (35)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |CPU|cpu_order:inst6           ; work         ;
++--------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+--------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                           ;
++-----------------------------------------------------+--------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal            ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------+------------------------+
+; cpu_order:inst6|R_Add[0]                            ; cpu_order:inst6|F_BUS~1        ; yes                    ;
+; cpu_order:inst6|R_Add[1]                            ; cpu_order:inst6|F_BUS~1        ; yes                    ;
+; cpu_order:inst6|W_Add[0]                            ; cpu_order:inst6|F_BUS~1        ; yes                    ;
+; cpu_order:inst6|W_Add[1]                            ; cpu_order:inst6|F_BUS~1        ; yes                    ;
+; cpu_order:inst6|S[3]                                ; cpu_order:inst6|F_BUS~1        ; yes                    ;
+; cpu_order:inst6|S[2]                                ; cpu_order:inst6|F_BUS~1        ; yes                    ;
+; cpu_order:inst6|S[1]                                ; cpu_order:inst6|F_BUS~1        ; yes                    ;
+; cpu_order:inst6|S[0]                                ; cpu_order:inst6|F_BUS~1        ; yes                    ;
+; cpu_order:inst6|W_n                                 ; cpu_order:inst6|Mux12          ; yes                    ;
+; cpu_order:inst6|R[0]                                ; CPU_SM:inst7|tmp               ; yes                    ;
+; cpu_order:inst6|tmp[0]                              ; CPU_SM:inst7|tmp               ; yes                    ;
+; cpu_order:inst6|tmp[1]                              ; CPU_SM:inst7|tmp               ; yes                    ;
+; cpu_order:inst6|tmp[2]                              ; CPU_SM:inst7|tmp               ; yes                    ;
+; cpu_order:inst6|tmp[3]                              ; CPU_SM:inst7|tmp               ; yes                    ;
+; cpu_order:inst6|R[1]                                ; CPU_SM:inst7|tmp               ; yes                    ;
+; cpu_order:inst6|W[0]                                ; CPU_SM:inst7|tmp               ; yes                    ;
+; cpu_order:inst6|W[1]                                ; CPU_SM:inst7|tmp               ; yes                    ;
+; cpu_order:inst6|MADD[1]                             ; cpu_order:inst6|Mux12          ; yes                    ;
+; cpu_order:inst6|MADD[0]                             ; cpu_order:inst6|Mux12          ; yes                    ;
+; CPU_ALU:inst|ALU_out[7]$latch                       ; CPU_ALU:inst|Mux6              ; yes                    ;
+; CPU_ALU:inst|ALU_out[0]_116                         ; CPU_ALU:inst|Mux6              ; yes                    ;
+; CPU_ALU:inst|ALU_out[6]$latch                       ; CPU_ALU:inst|Mux6              ; yes                    ;
+; CPU_ALU:inst|ALU_out[5]$latch                       ; CPU_ALU:inst|Mux6              ; yes                    ;
+; CPU_ALU:inst|ALU_out[4]$latch                       ; CPU_ALU:inst|Mux6              ; yes                    ;
+; CPU_ALU:inst|ALU_out[3]$latch                       ; CPU_ALU:inst|Mux6              ; yes                    ;
+; CPU_ALU:inst|ALU_out[2]$latch                       ; CPU_ALU:inst|Mux6              ; yes                    ;
+; CPU_ALU:inst|ALU_out[1]$latch                       ; CPU_ALU:inst|Mux6              ; yes                    ;
+; CPU_ALU:inst|ALU_out[0]$latch                       ; CPU_ALU:inst|Mux6              ; yes                    ;
+; CPU_SHIFT:inst8|Data_out[7]$latch                   ; CPU_SHIFT:inst8|Data_out[7]~23 ; yes                    ;
+; CPU_SHIFT:inst8|Data_out[0]_68                      ; CPU_SHIFT:inst8|Data_out[7]~23 ; yes                    ;
+; cpu_order:inst6|CS_n                                ; cpu_order:inst6|Mux12          ; yes                    ;
+; cpu_order:inst6|DL                                  ; cpu_order:inst6|Mux12          ; yes                    ;
+; CPU_SHIFT:inst8|Data_out[6]$latch                   ; CPU_SHIFT:inst8|Data_out[7]~23 ; yes                    ;
+; CPU_SHIFT:inst8|Data_out[5]$latch                   ; CPU_SHIFT:inst8|Data_out[7]~23 ; yes                    ;
+; CPU_SHIFT:inst8|Data_out[4]$latch                   ; CPU_SHIFT:inst8|Data_out[7]~23 ; yes                    ;
+; CPU_SHIFT:inst8|Data_out[3]$latch                   ; CPU_SHIFT:inst8|Data_out[7]~23 ; yes                    ;
+; CPU_SHIFT:inst8|Data_out[2]$latch                   ; CPU_SHIFT:inst8|Data_out[7]~23 ; yes                    ;
+; CPU_SHIFT:inst8|Data_out[1]$latch                   ; CPU_SHIFT:inst8|Data_out[7]~23 ; yes                    ;
+; CPU_SHIFT:inst8|Data_out[0]$latch                   ; CPU_SHIFT:inst8|Data_out[7]~23 ; yes                    ;
+; cpu_order:inst6|M                                   ; cpu_order:inst6|Mux12          ; yes                    ;
+; cpu_order:inst6|FR_BUS                              ; cpu_order:inst6|FL_BUS~0       ; yes                    ;
+; cpu_order:inst6|F_BUS                               ; cpu_order:inst6|F_BUS~1        ; yes                    ;
+; cpu_order:inst6|FL_BUS                              ; cpu_order:inst6|FL_BUS~0       ; yes                    ;
+; cpu_order:inst6|XL                                  ; cpu_order:inst6|Mux12          ; yes                    ;
+; Number of user-specified and inferred latches = 44  ;                                ;                        ;
++-----------------------------------------------------+--------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; CPU_SM:inst7|count                    ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 1 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 497   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 21    ;
+; Number of registers using Asynchronous Load  ; 3     ;
+; Number of registers using Clock Enable       ; 496   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; CPU_REGISTER_GROUP:inst17|R_B[1]       ; 4       ;
+; CPU_REGISTER_GROUP:inst17|R_A[0]       ; 4       ;
+; CPU_REGISTER_GROUP:inst17|R_C[0]       ; 4       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 4:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |CPU|CPU_REGISTER_GROUP:inst17|Mux1 ;
+; 4:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |CPU|CPU_REGISTER_GROUP:inst17|Mux9 ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |CPU|CPU_MUX:inst2|Mux7             ;
+; 3:1                ; 7 bits    ; 14 ALUTs      ; 7 ALUTs              ; 7 ALUTs                ; No         ; |CPU|CPU_SHIFT:inst8|Data_out[7]~22 ;
+; 6:1                ; 8 bits    ; 32 ALUTs      ; 24 ALUTs             ; 8 ALUTs                ; No         ; |CPU|CPU_ALU:inst|Mux4              ;
+; 6:1                ; 2 bits    ; 8 ALUTs       ; 6 ALUTs              ; 2 ALUTs                ; No         ; |CPU|cpu_order:inst6|Mux4           ;
+; 1:1                ; 2 bits    ; 0 ALUTs       ; 0 ALUTs              ; 0 ALUTs                ; No         ; |CPU|cpu_order:inst6|Mux2           ;
+; 6:1                ; 2 bits    ; 8 ALUTs       ; 0 ALUTs              ; 8 ALUTs                ; No         ; |CPU|cpu_order:inst6|Mux9           ;
+; 6:1                ; 2 bits    ; 8 ALUTs       ; 2 ALUTs              ; 6 ALUTs                ; No         ; |CPU|cpu_order:inst6|Mux6           ;
+; 7:1                ; 2 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |CPU|cpu_order:inst6|Mux10          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Jan 08 10:37:57 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
+Info: Found 1 design units, including 1 entities, in source file CPU.bdf
+    Info: Found entity 1: CPU
+Info: Elaborating entity "CPU" for the top level hierarchy
+Warning: Using design file CPU_SM.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: CPU_SM-arch
+    Info: Found entity 1: CPU_SM
+Info: Elaborating entity "CPU_SM" for hierarchy "CPU_SM:inst7"
+Warning (10492): VHDL Process Statement warning at CPU_SM.vhd(21): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Using design file CPU_REGISTER_GROUP.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: CPU_REGISTER_GROUP-arch
+    Info: Found entity 1: CPU_REGISTER_GROUP
+Info: Elaborating entity "CPU_REGISTER_GROUP" for hierarchy "CPU_REGISTER_GROUP:inst17"
+Warning (10492): VHDL Process Statement warning at CPU_REGISTER_GROUP.vhd(28): signal "R_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at CPU_REGISTER_GROUP.vhd(30): signal "R_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at CPU_REGISTER_GROUP.vhd(32): signal "R_C" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at CPU_REGISTER_GROUP.vhd(34): signal "R_C" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at CPU_REGISTER_GROUP.vhd(42): signal "R_A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at CPU_REGISTER_GROUP.vhd(44): signal "R_B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at CPU_REGISTER_GROUP.vhd(46): signal "R_C" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at CPU_REGISTER_GROUP.vhd(48): signal "R_C" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Using design file cpu_order.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: cpu_order-ip
+    Info: Found entity 1: cpu_order
+Info: Elaborating entity "cpu_order" for hierarchy "cpu_order:inst6"
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(34): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(36): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(38): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(40): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(41): signal "W" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(47): signal "W" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(49): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(50): signal "W" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(58): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(59): signal "W" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(68): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(71): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(72): signal "W" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(79): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(82): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(83): signal "W" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(90): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(93): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(94): signal "W" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(101): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(104): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(105): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(112): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(114): signal "W" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(119): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(120): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(130): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at cpu_order.vhd(131): signal "R" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "tmp", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "R", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "W", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "S", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "F_BUS", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "W_n", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "R_Add", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "W_Add", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "MADD", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "CS_n", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "DL", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "XL", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "M", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "FR_BUS", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at cpu_order.vhd(26): inferring latch(es) for signal or variable "FL_BUS", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "FL_BUS" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "FR_BUS" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "M" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "XL" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "DL" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "CS_n" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "MADD[0]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "MADD[1]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "W_Add[0]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "W_Add[1]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "R_Add[0]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "R_Add[1]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "W_n" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "F_BUS" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "S[0]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "S[1]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "S[2]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "S[3]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "W[0]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "W[1]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "R[0]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "R[1]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "tmp[0]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "tmp[1]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "tmp[2]" at cpu_order.vhd(26)
+Info (10041): Inferred latch for "tmp[3]" at cpu_order.vhd(26)
+Warning: Using design file CPU_ALU.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: CPU_ALU-ALU_architecture
+    Info: Found entity 1: CPU_ALU
+Info: Elaborating entity "CPU_ALU" for hierarchy "CPU_ALU:inst"
+Warning (10631): VHDL Process Statement warning at CPU_ALU.vhd(20): inferring latch(es) for signal or variable "ALU_out", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at CPU_ALU.vhd(20): inferring latch(es) for signal or variable "c", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at CPU_ALU.vhd(20): inferring latch(es) for signal or variable "ss", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "ss" at CPU_ALU.vhd(20)
+Info (10041): Inferred latch for "c" at CPU_ALU.vhd(20)
+Info (10041): Inferred latch for "ALU_out[0]" at CPU_ALU.vhd(20)
+Info (10041): Inferred latch for "ALU_out[1]" at CPU_ALU.vhd(20)
+Info (10041): Inferred latch for "ALU_out[2]" at CPU_ALU.vhd(20)
+Info (10041): Inferred latch for "ALU_out[3]" at CPU_ALU.vhd(20)
+Info (10041): Inferred latch for "ALU_out[4]" at CPU_ALU.vhd(20)
+Info (10041): Inferred latch for "ALU_out[5]" at CPU_ALU.vhd(20)
+Info (10041): Inferred latch for "ALU_out[6]" at CPU_ALU.vhd(20)
+Info (10041): Inferred latch for "ALU_out[7]" at CPU_ALU.vhd(20)
+Warning: Using design file CPU_IR_REGISTER.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: CPU_IR_REGISTER-ip
+    Info: Found entity 1: CPU_IR_REGISTER
+Info: Elaborating entity "CPU_IR_REGISTER" for hierarchy "CPU_IR_REGISTER:inst1"
+Warning: Using design file CPU_RAM.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: CPU_RAM-arch1
+    Info: Found entity 1: CPU_RAM
+Info: Elaborating entity "CPU_RAM" for hierarchy "CPU_RAM:inst12"
+Warning (10492): VHDL Process Statement warning at CPU_RAM.vhd(25): signal "mem" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at CPU_RAM.vhd(25): signal "PC_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Using design file CPU_MUX.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: CPU_MUX-ALU_architecture
+    Info: Found entity 1: CPU_MUX
+Info: Elaborating entity "CPU_MUX" for hierarchy "CPU_MUX:inst2"
+Warning (10492): VHDL Process Statement warning at CPU_MUX.vhd(16): signal "PC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at CPU_MUX.vhd(18): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at CPU_MUX.vhd(20): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning: Using design file CPU_PC.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: CPU_PC-arch
+    Info: Found entity 1: CPU_PC
+Info: Elaborating entity "CPU_PC" for hierarchy "CPU_PC:inst5"
+Warning: Using design file CPU_SHIFT.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: CPU_SHIFT-arch
+    Info: Found entity 1: CPU_SHIFT
+Info: Elaborating entity "CPU_SHIFT" for hierarchy "CPU_SHIFT:inst8"
+Warning (10631): VHDL Process Statement warning at CPU_SHIFT.vhd(15): inferring latch(es) for signal or variable "Data_out", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "Data_out[0]" at CPU_SHIFT.vhd(15)
+Info (10041): Inferred latch for "Data_out[1]" at CPU_SHIFT.vhd(15)
+Info (10041): Inferred latch for "Data_out[2]" at CPU_SHIFT.vhd(15)
+Info (10041): Inferred latch for "Data_out[3]" at CPU_SHIFT.vhd(15)
+Info (10041): Inferred latch for "Data_out[4]" at CPU_SHIFT.vhd(15)
+Info (10041): Inferred latch for "Data_out[5]" at CPU_SHIFT.vhd(15)
+Info (10041): Inferred latch for "Data_out[6]" at CPU_SHIFT.vhd(15)
+Info (10041): Inferred latch for "Data_out[7]" at CPU_SHIFT.vhd(15)
+Info: Found 1 instances of uninferred RAM logic
+    Info: RAM logic "CPU_RAM:inst12|mem" is uninferred due to asynchronous read logic
+Warning: 7 out of 64 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
+    Warning: Addresses ranging from 57 to 63 are not initialized
+Warning: Tri-state node(s) do not directly drive top-level pin(s)
+    Warning: Converted the fan-out from the tri-state buffer "CPU_MUX:inst2|data_out[5]" to the node "CPU_RAM:inst12|mem" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_MUX:inst2|data_out[4]" to the node "CPU_RAM:inst12|mem" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_MUX:inst2|data_out[3]" to the node "CPU_RAM:inst12|mem" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_MUX:inst2|data_out[2]" to the node "CPU_RAM:inst12|mem" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_MUX:inst2|data_out[1]" to the node "CPU_RAM:inst12|mem" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_MUX:inst2|data_out[0]" to the node "CPU_RAM:inst12|mem" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_ALU:inst|ALU_out[7]" to the node "CPU_SHIFT:inst8|Data_out[7]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_ALU:inst|ALU_out[6]" to the node "CPU_SHIFT:inst8|Data_out[7]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_ALU:inst|ALU_out[5]" to the node "CPU_SHIFT:inst8|Data_out[6]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_ALU:inst|ALU_out[4]" to the node "CPU_SHIFT:inst8|Data_out[5]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_ALU:inst|ALU_out[3]" to the node "CPU_SHIFT:inst8|Data_out[4]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_ALU:inst|ALU_out[2]" to the node "CPU_SHIFT:inst8|Data_out[3]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_ALU:inst|ALU_out[1]" to the node "CPU_SHIFT:inst8|Data_out[2]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_ALU:inst|ALU_out[0]" to the node "CPU_SHIFT:inst8|Data_out[1]" into an OR gate
+Warning: Tri-state node(s) do not directly drive top-level pin(s)
+    Warning: Converted the fan-out from the tri-state buffer "CPU_SHIFT:inst8|Data_out[7]" to the node "CPU_REGISTER_GROUP:inst17|R_C[7]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_SHIFT:inst8|Data_out[6]" to the node "CPU_REGISTER_GROUP:inst17|R_C[6]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_SHIFT:inst8|Data_out[5]" to the node "CPU_REGISTER_GROUP:inst17|R_C[5]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_SHIFT:inst8|Data_out[4]" to the node "CPU_REGISTER_GROUP:inst17|R_C[4]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_SHIFT:inst8|Data_out[3]" to the node "CPU_REGISTER_GROUP:inst17|R_C[3]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_SHIFT:inst8|Data_out[2]" to the node "CPU_REGISTER_GROUP:inst17|R_C[2]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_SHIFT:inst8|Data_out[1]" to the node "CPU_REGISTER_GROUP:inst17|R_C[1]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "CPU_SHIFT:inst8|Data_out[0]" to the node "CPU_REGISTER_GROUP:inst17|R_C[0]" into an OR gate
+Info: Duplicate LATCH primitives merged into single LATCH primitive
+    Info: Duplicate LATCH primitive "cpu_order:inst6|XL" merged with LATCH primitive "cpu_order:inst6|MADD[1]"
+    Info: Duplicate LATCH primitive "cpu_order:inst6|M" merged with LATCH primitive "cpu_order:inst6|MADD[1]"
+Warning: Latch cpu_order:inst6|W_Add[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[1]
+Warning: Latch cpu_order:inst6|W_Add[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[1]
+Warning: Latch cpu_order:inst6|S[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[3]
+Warning: Latch cpu_order:inst6|S[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[2]
+Warning: Latch cpu_order:inst6|S[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[1]
+Warning: Latch cpu_order:inst6|S[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[0]
+Warning: Latch cpu_order:inst6|W_n has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[0]
+Warning: Latch cpu_order:inst6|MADD[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[0]
+Warning: Latch cpu_order:inst6|MADD[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[0]
+Warning: Latch CPU_ALU:inst|ALU_out[7]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|S[0]
+Warning: Latch CPU_ALU:inst|ALU_out[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|S[0]
+Warning: Latch CPU_ALU:inst|ALU_out[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|S[0]
+Warning: Latch CPU_ALU:inst|ALU_out[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|S[0]
+Warning: Latch CPU_ALU:inst|ALU_out[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|S[0]
+Warning: Latch CPU_ALU:inst|ALU_out[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|S[0]
+Warning: Latch CPU_ALU:inst|ALU_out[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|S[0]
+Warning: Latch CPU_ALU:inst|ALU_out[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|S[0]
+Warning: Latch CPU_SHIFT:inst8|Data_out[7]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|FR_BUS
+Warning: Latch cpu_order:inst6|CS_n has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[0]
+Warning: Latch cpu_order:inst6|DL has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[0]
+Warning: Latch CPU_SHIFT:inst8|Data_out[6]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|FR_BUS
+Warning: Latch CPU_SHIFT:inst8|Data_out[5]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|FR_BUS
+Warning: Latch CPU_SHIFT:inst8|Data_out[4]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|FR_BUS
+Warning: Latch CPU_SHIFT:inst8|Data_out[3]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|FR_BUS
+Warning: Latch CPU_SHIFT:inst8|Data_out[2]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|FR_BUS
+Warning: Latch CPU_SHIFT:inst8|Data_out[1]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|FR_BUS
+Warning: Latch CPU_SHIFT:inst8|Data_out[0]$latch has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|F_BUS
+Warning: Latch cpu_order:inst6|F_BUS has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal cpu_order:inst6|tmp[0]
+Info: Registers with preset signals will power-up high
+Info: Implemented 1007 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 89 output pins
+    Info: Implemented 916 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 152 warnings
+    Info: Peak virtual memory: 238 megabytes
+    Info: Processing ended: Mon Jan 08 10:38:05 2018
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:08
+
+

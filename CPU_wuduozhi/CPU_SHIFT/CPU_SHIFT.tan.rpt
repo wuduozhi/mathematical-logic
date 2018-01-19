@@ -1,0 +1,405 @@
+Classic Timing Analyzer report for CPU_SHIFT
+Fri Jan 05 23:44:38 2018
+Quartus II Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                           ;
++------------------------------+-------+---------------+-------------+-------------------+-------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From              ; To                ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+-------------------+-------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 2.894 ns    ; Data_in[4]        ; Data_out[5]$latch ; --         ; F_BUS    ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 8.220 ns    ; Data_out[6]$latch ; Data_out[6]       ; FR_BUS     ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.685 ns   ; F_BUS             ; Data_out[6]$latch ; --         ; FR_BUS   ; 0            ;
+; Total number of failed paths ;       ;               ;             ;                   ;                   ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+-------------------+-------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP2S15F484C3       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; FL_BUS          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; F_BUS           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; FR_BUS          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------+
+; tsu                                                                           ;
++-------+--------------+------------+------------+-------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From       ; To                ; To Clock ;
++-------+--------------+------------+------------+-------------------+----------+
+; N/A   ; None         ; 2.894 ns   ; Data_in[4] ; Data_out[5]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.857 ns   ; Data_in[7] ; Data_out[7]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.811 ns   ; Data_in[4] ; Data_out[5]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.810 ns   ; Data_in[5] ; Data_out[5]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.774 ns   ; Data_in[7] ; Data_out[7]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.730 ns   ; Data_in[1] ; Data_out[1]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.727 ns   ; Data_in[5] ; Data_out[5]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.722 ns   ; Data_in[1] ; Data_out[2]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.718 ns   ; Data_in[2] ; Data_out[2]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.715 ns   ; Data_in[3] ; Data_out[3]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.647 ns   ; Data_in[1] ; Data_out[1]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.639 ns   ; Data_in[1] ; Data_out[2]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.635 ns   ; Data_in[2] ; Data_out[2]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.632 ns   ; Data_in[3] ; Data_out[3]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.582 ns   ; FR_BUS     ; Data_out[1]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.545 ns   ; FR_BUS     ; Data_out[5]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.508 ns   ; FR_BUS     ; Data_out[3]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.504 ns   ; Data_in[0] ; Data_out[1]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.499 ns   ; FR_BUS     ; Data_out[1]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.491 ns   ; Data_in[4] ; Data_out[5]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.468 ns   ; Data_in[6] ; Data_out[7]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.462 ns   ; FR_BUS     ; Data_out[5]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.454 ns   ; Data_in[7] ; Data_out[7]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.445 ns   ; FR_BUS     ; Data_out[2]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.427 ns   ; Data_in[4] ; Data_out[4]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.425 ns   ; FR_BUS     ; Data_out[3]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.421 ns   ; Data_in[0] ; Data_out[1]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.410 ns   ; F_BUS      ; Data_out[5]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.407 ns   ; Data_in[5] ; Data_out[5]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.385 ns   ; Data_in[6] ; Data_out[7]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.367 ns   ; Data_in[6] ; Data_out[6]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.362 ns   ; FR_BUS     ; Data_out[2]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.344 ns   ; Data_in[4] ; Data_out[4]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.327 ns   ; F_BUS      ; Data_out[5]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.327 ns   ; Data_in[1] ; Data_out[1]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.319 ns   ; Data_in[1] ; Data_out[2]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.315 ns   ; Data_in[2] ; Data_out[2]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.312 ns   ; Data_in[3] ; Data_out[3]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.308 ns   ; Data_in[2] ; Data_out[3]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.288 ns   ; FR_BUS     ; Data_out[4]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.288 ns   ; F_BUS      ; Data_out[1]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.284 ns   ; Data_in[6] ; Data_out[6]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.282 ns   ; F_BUS      ; Data_out[2]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.273 ns   ; FR_BUS     ; Data_out[6]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.225 ns   ; Data_in[2] ; Data_out[3]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.214 ns   ; Data_in[0] ; Data_out[0]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.205 ns   ; FR_BUS     ; Data_out[4]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.205 ns   ; F_BUS      ; Data_out[1]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.199 ns   ; F_BUS      ; Data_out[2]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.190 ns   ; FR_BUS     ; Data_out[6]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.179 ns   ; FR_BUS     ; Data_out[1]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.163 ns   ; FR_BUS     ; Data_out[7]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.142 ns   ; FR_BUS     ; Data_out[5]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.135 ns   ; Data_in[5] ; Data_out[6]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.131 ns   ; Data_in[0] ; Data_out[0]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.105 ns   ; FR_BUS     ; Data_out[3]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.101 ns   ; Data_in[0] ; Data_out[1]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.098 ns   ; F_BUS      ; Data_out[4]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.096 ns   ; Data_in[3] ; Data_out[4]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.080 ns   ; FR_BUS     ; Data_out[7]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.065 ns   ; Data_in[6] ; Data_out[7]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.052 ns   ; Data_in[5] ; Data_out[6]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.047 ns   ; F_BUS      ; Data_out[3]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.044 ns   ; F_BUS      ; Data_out[7]$latch ; F_BUS    ;
+; N/A   ; None         ; 2.042 ns   ; FR_BUS     ; Data_out[2]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.024 ns   ; Data_in[4] ; Data_out[4]$latch ; FR_BUS   ;
+; N/A   ; None         ; 2.015 ns   ; F_BUS      ; Data_out[4]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.013 ns   ; Data_in[3] ; Data_out[4]$latch ; FL_BUS   ;
+; N/A   ; None         ; 2.007 ns   ; F_BUS      ; Data_out[5]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.964 ns   ; F_BUS      ; Data_out[3]$latch ; FL_BUS   ;
+; N/A   ; None         ; 1.964 ns   ; Data_in[6] ; Data_out[6]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.961 ns   ; F_BUS      ; Data_out[7]$latch ; FL_BUS   ;
+; N/A   ; None         ; 1.905 ns   ; Data_in[2] ; Data_out[3]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.885 ns   ; FR_BUS     ; Data_out[4]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.885 ns   ; F_BUS      ; Data_out[1]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.879 ns   ; F_BUS      ; Data_out[2]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.870 ns   ; FR_BUS     ; Data_out[6]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.811 ns   ; Data_in[0] ; Data_out[0]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.760 ns   ; FR_BUS     ; Data_out[7]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.732 ns   ; Data_in[5] ; Data_out[6]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.708 ns   ; F_BUS      ; Data_out[6]$latch ; F_BUS    ;
+; N/A   ; None         ; 1.695 ns   ; F_BUS      ; Data_out[4]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.693 ns   ; Data_in[3] ; Data_out[4]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.644 ns   ; F_BUS      ; Data_out[3]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.641 ns   ; F_BUS      ; Data_out[7]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.625 ns   ; F_BUS      ; Data_out[6]$latch ; FL_BUS   ;
+; N/A   ; None         ; 1.624 ns   ; F_BUS      ; Data_out[0]$latch ; F_BUS    ;
+; N/A   ; None         ; 1.541 ns   ; F_BUS      ; Data_out[0]$latch ; FL_BUS   ;
+; N/A   ; None         ; 1.305 ns   ; F_BUS      ; Data_out[6]$latch ; FR_BUS   ;
+; N/A   ; None         ; 1.221 ns   ; F_BUS      ; Data_out[0]$latch ; FR_BUS   ;
++-------+--------------+------------+------------+-------------------+----------+
+
+
++----------------------------------------------------------------------------------+
+; tco                                                                              ;
++-------+--------------+------------+-------------------+-------------+------------+
+; Slack ; Required tco ; Actual tco ; From              ; To          ; From Clock ;
++-------+--------------+------------+-------------------+-------------+------------+
+; N/A   ; None         ; 8.220 ns   ; Data_out[6]$latch ; Data_out[6] ; FR_BUS     ;
+; N/A   ; None         ; 7.917 ns   ; Data_out[3]$latch ; Data_out[3] ; FR_BUS     ;
+; N/A   ; None         ; 7.900 ns   ; Data_out[6]$latch ; Data_out[6] ; FL_BUS     ;
+; N/A   ; None         ; 7.817 ns   ; Data_out[6]$latch ; Data_out[6] ; F_BUS      ;
+; N/A   ; None         ; 7.738 ns   ; Data_out[5]$latch ; Data_out[5] ; FR_BUS     ;
+; N/A   ; None         ; 7.597 ns   ; Data_out[3]$latch ; Data_out[3] ; FL_BUS     ;
+; N/A   ; None         ; 7.548 ns   ; Data_out[0]$latch ; Data_out[0] ; FR_BUS     ;
+; N/A   ; None         ; 7.514 ns   ; Data_out[3]$latch ; Data_out[3] ; F_BUS      ;
+; N/A   ; None         ; 7.418 ns   ; Data_out[5]$latch ; Data_out[5] ; FL_BUS     ;
+; N/A   ; None         ; 7.335 ns   ; Data_out[5]$latch ; Data_out[5] ; F_BUS      ;
+; N/A   ; None         ; 7.259 ns   ; Data_out[4]$latch ; Data_out[4] ; FR_BUS     ;
+; N/A   ; None         ; 7.228 ns   ; Data_out[0]$latch ; Data_out[0] ; FL_BUS     ;
+; N/A   ; None         ; 7.213 ns   ; Data_out[1]$latch ; Data_out[1] ; FR_BUS     ;
+; N/A   ; None         ; 7.182 ns   ; Data_out[2]$latch ; Data_out[2] ; FR_BUS     ;
+; N/A   ; None         ; 7.145 ns   ; Data_out[0]$latch ; Data_out[0] ; F_BUS      ;
+; N/A   ; None         ; 6.939 ns   ; Data_out[4]$latch ; Data_out[4] ; FL_BUS     ;
+; N/A   ; None         ; 6.925 ns   ; Data_out[7]$latch ; Data_out[7] ; FR_BUS     ;
+; N/A   ; None         ; 6.893 ns   ; Data_out[1]$latch ; Data_out[1] ; FL_BUS     ;
+; N/A   ; None         ; 6.862 ns   ; Data_out[2]$latch ; Data_out[2] ; FL_BUS     ;
+; N/A   ; None         ; 6.856 ns   ; Data_out[4]$latch ; Data_out[4] ; F_BUS      ;
+; N/A   ; None         ; 6.810 ns   ; Data_out[1]$latch ; Data_out[1] ; F_BUS      ;
+; N/A   ; None         ; 6.779 ns   ; Data_out[2]$latch ; Data_out[2] ; F_BUS      ;
+; N/A   ; None         ; 6.605 ns   ; Data_out[7]$latch ; Data_out[7] ; FL_BUS     ;
+; N/A   ; None         ; 6.522 ns   ; Data_out[7]$latch ; Data_out[7] ; F_BUS      ;
++-------+--------------+------------+-------------------+-------------+------------+
+
+
++-------------------------------------------------------------------------------------+
+; th                                                                                  ;
++---------------+-------------+-----------+------------+-------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From       ; To                ; To Clock ;
++---------------+-------------+-----------+------------+-------------------+----------+
+; N/A           ; None        ; -0.685 ns ; F_BUS      ; Data_out[6]$latch ; FR_BUS   ;
+; N/A           ; None        ; -0.695 ns ; F_BUS      ; Data_out[0]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.005 ns ; F_BUS      ; Data_out[6]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.015 ns ; F_BUS      ; Data_out[0]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.088 ns ; F_BUS      ; Data_out[6]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.098 ns ; F_BUS      ; Data_out[0]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.098 ns ; Data_in[3] ; Data_out[4]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.100 ns ; F_BUS      ; Data_out[4]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.112 ns ; Data_in[5] ; Data_out[6]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.115 ns ; F_BUS      ; Data_out[7]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.118 ns ; F_BUS      ; Data_out[3]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.234 ns ; FR_BUS     ; Data_out[7]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.250 ns ; FR_BUS     ; Data_out[6]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.284 ns ; F_BUS      ; Data_out[2]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.285 ns ; Data_in[0] ; Data_out[0]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.290 ns ; FR_BUS     ; Data_out[4]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.344 ns ; Data_in[6] ; Data_out[6]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.359 ns ; F_BUS      ; Data_out[1]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.379 ns ; Data_in[2] ; Data_out[3]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.418 ns ; Data_in[3] ; Data_out[4]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.420 ns ; F_BUS      ; Data_out[4]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.429 ns ; Data_in[4] ; Data_out[4]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.432 ns ; Data_in[5] ; Data_out[6]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.435 ns ; F_BUS      ; Data_out[7]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.437 ns ; F_BUS      ; Data_out[5]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.438 ns ; F_BUS      ; Data_out[3]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.447 ns ; FR_BUS     ; Data_out[2]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.501 ns ; Data_in[3] ; Data_out[4]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.503 ns ; F_BUS      ; Data_out[4]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.515 ns ; Data_in[5] ; Data_out[6]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.518 ns ; F_BUS      ; Data_out[7]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.521 ns ; F_BUS      ; Data_out[3]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.539 ns ; Data_in[6] ; Data_out[7]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.554 ns ; FR_BUS     ; Data_out[7]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.570 ns ; FR_BUS     ; Data_out[6]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.572 ns ; FR_BUS     ; Data_out[5]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.575 ns ; Data_in[0] ; Data_out[1]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.579 ns ; FR_BUS     ; Data_out[3]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.604 ns ; F_BUS      ; Data_out[2]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.605 ns ; Data_in[0] ; Data_out[0]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.610 ns ; FR_BUS     ; Data_out[4]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.637 ns ; FR_BUS     ; Data_out[7]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.653 ns ; FR_BUS     ; Data_out[1]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.653 ns ; FR_BUS     ; Data_out[6]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.664 ns ; Data_in[6] ; Data_out[6]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.679 ns ; F_BUS      ; Data_out[1]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.687 ns ; F_BUS      ; Data_out[2]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.688 ns ; Data_in[0] ; Data_out[0]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.693 ns ; FR_BUS     ; Data_out[4]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.699 ns ; Data_in[2] ; Data_out[3]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.720 ns ; Data_in[2] ; Data_out[2]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.724 ns ; Data_in[1] ; Data_out[2]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.747 ns ; Data_in[6] ; Data_out[6]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.749 ns ; Data_in[4] ; Data_out[4]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.757 ns ; F_BUS      ; Data_out[5]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.762 ns ; F_BUS      ; Data_out[1]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.767 ns ; FR_BUS     ; Data_out[2]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.782 ns ; Data_in[2] ; Data_out[3]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.786 ns ; Data_in[3] ; Data_out[3]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.801 ns ; Data_in[1] ; Data_out[1]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.832 ns ; Data_in[4] ; Data_out[4]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.837 ns ; Data_in[5] ; Data_out[5]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.840 ns ; F_BUS      ; Data_out[5]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.850 ns ; FR_BUS     ; Data_out[2]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.859 ns ; Data_in[6] ; Data_out[7]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.892 ns ; FR_BUS     ; Data_out[5]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.895 ns ; Data_in[0] ; Data_out[1]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.899 ns ; FR_BUS     ; Data_out[3]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.921 ns ; Data_in[4] ; Data_out[5]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.928 ns ; Data_in[7] ; Data_out[7]$latch ; FR_BUS   ;
+; N/A           ; None        ; -1.942 ns ; Data_in[6] ; Data_out[7]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.973 ns ; FR_BUS     ; Data_out[1]$latch ; FL_BUS   ;
+; N/A           ; None        ; -1.975 ns ; FR_BUS     ; Data_out[5]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.978 ns ; Data_in[0] ; Data_out[1]$latch ; F_BUS    ;
+; N/A           ; None        ; -1.982 ns ; FR_BUS     ; Data_out[3]$latch ; F_BUS    ;
+; N/A           ; None        ; -2.040 ns ; Data_in[2] ; Data_out[2]$latch ; FL_BUS   ;
+; N/A           ; None        ; -2.044 ns ; Data_in[1] ; Data_out[2]$latch ; FL_BUS   ;
+; N/A           ; None        ; -2.056 ns ; FR_BUS     ; Data_out[1]$latch ; F_BUS    ;
+; N/A           ; None        ; -2.106 ns ; Data_in[3] ; Data_out[3]$latch ; FL_BUS   ;
+; N/A           ; None        ; -2.121 ns ; Data_in[1] ; Data_out[1]$latch ; FL_BUS   ;
+; N/A           ; None        ; -2.123 ns ; Data_in[2] ; Data_out[2]$latch ; F_BUS    ;
+; N/A           ; None        ; -2.127 ns ; Data_in[1] ; Data_out[2]$latch ; F_BUS    ;
+; N/A           ; None        ; -2.157 ns ; Data_in[5] ; Data_out[5]$latch ; FL_BUS   ;
+; N/A           ; None        ; -2.189 ns ; Data_in[3] ; Data_out[3]$latch ; F_BUS    ;
+; N/A           ; None        ; -2.204 ns ; Data_in[1] ; Data_out[1]$latch ; F_BUS    ;
+; N/A           ; None        ; -2.240 ns ; Data_in[5] ; Data_out[5]$latch ; F_BUS    ;
+; N/A           ; None        ; -2.241 ns ; Data_in[4] ; Data_out[5]$latch ; FL_BUS   ;
+; N/A           ; None        ; -2.248 ns ; Data_in[7] ; Data_out[7]$latch ; FL_BUS   ;
+; N/A           ; None        ; -2.324 ns ; Data_in[4] ; Data_out[5]$latch ; F_BUS    ;
+; N/A           ; None        ; -2.331 ns ; Data_in[7] ; Data_out[7]$latch ; F_BUS    ;
++---------------+-------------+-----------+------------+-------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 184 04/29/2009 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Jan 05 23:44:38 2018
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off CPU_SHIFT -c CPU_SHIFT --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "Data_out[0]$latch" is a latch
+    Warning: Node "Data_out[1]$latch" is a latch
+    Warning: Node "Data_out[2]$latch" is a latch
+    Warning: Node "Data_out[3]$latch" is a latch
+    Warning: Node "Data_out[4]$latch" is a latch
+    Warning: Node "Data_out[5]$latch" is a latch
+    Warning: Node "Data_out[6]$latch" is a latch
+    Warning: Node "Data_out[7]$latch" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "FL_BUS" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+    Info: Assuming node "F_BUS" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+    Info: Assuming node "FR_BUS" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "Data_out[7]~16" as buffer
+Info: tsu for register "Data_out[5]$latch" (data pin = "Data_in[4]", clock pin = "F_BUS") is 2.894 ns
+    Info: + Longest pin to register delay is 6.152 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.817 ns) = 0.817 ns; Loc. = PIN_U16; Fanout = 2; PIN Node = 'Data_in[4]'
+        Info: 2: + IC(4.079 ns) + CELL(0.346 ns) = 5.242 ns; Loc. = LCCOMB_X2_Y8_N24; Fanout = 1; COMB Node = 'Data_out[5]~22'
+        Info: 3: + IC(0.756 ns) + CELL(0.154 ns) = 6.152 ns; Loc. = LCCOMB_X2_Y12_N16; Fanout = 1; REG Node = 'Data_out[5]$latch'
+        Info: Total cell delay = 1.317 ns ( 21.41 % )
+        Info: Total interconnect delay = 4.835 ns ( 78.59 % )
+    Info: + Micro setup delay of destination is 0.570 ns
+    Info: - Shortest clock path from clock "F_BUS" to destination register is 3.828 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.810 ns) = 0.810 ns; Loc. = PIN_P19; Fanout = 9; CLK Node = 'F_BUS'
+        Info: 2: + IC(0.730 ns) + CELL(0.225 ns) = 1.765 ns; Loc. = LCCOMB_X2_Y8_N2; Fanout = 1; COMB Node = 'Data_out[7]~16'
+        Info: 3: + IC(1.120 ns) + CELL(0.000 ns) = 2.885 ns; Loc. = CLKCTRL_G2; Fanout = 8; COMB Node = 'Data_out[7]~16clkctrl'
+        Info: 4: + IC(0.890 ns) + CELL(0.053 ns) = 3.828 ns; Loc. = LCCOMB_X2_Y12_N16; Fanout = 1; REG Node = 'Data_out[5]$latch'
+        Info: Total cell delay = 1.088 ns ( 28.42 % )
+        Info: Total interconnect delay = 2.740 ns ( 71.58 % )
+Info: tco from clock "FR_BUS" to destination pin "Data_out[6]" through register "Data_out[6]$latch" is 8.220 ns
+    Info: + Longest clock path from clock "FR_BUS" to source register is 4.285 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.817 ns) = 0.817 ns; Loc. = PIN_T16; Fanout = 8; CLK Node = 'FR_BUS'
+        Info: 2: + IC(1.123 ns) + CELL(0.228 ns) = 2.168 ns; Loc. = LCCOMB_X2_Y8_N2; Fanout = 1; COMB Node = 'Data_out[7]~16'
+        Info: 3: + IC(1.120 ns) + CELL(0.000 ns) = 3.288 ns; Loc. = CLKCTRL_G2; Fanout = 8; COMB Node = 'Data_out[7]~16clkctrl'
+        Info: 4: + IC(0.944 ns) + CELL(0.053 ns) = 4.285 ns; Loc. = LCCOMB_X2_Y8_N4; Fanout = 1; REG Node = 'Data_out[6]$latch'
+        Info: Total cell delay = 1.098 ns ( 25.62 % )
+        Info: Total interconnect delay = 3.187 ns ( 74.38 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 3.935 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X2_Y8_N4; Fanout = 1; REG Node = 'Data_out[6]$latch'
+        Info: 2: + IC(1.781 ns) + CELL(2.154 ns) = 3.935 ns; Loc. = PIN_R2; Fanout = 0; PIN Node = 'Data_out[6]'
+        Info: Total cell delay = 2.154 ns ( 54.74 % )
+        Info: Total interconnect delay = 1.781 ns ( 45.26 % )
+Info: th for register "Data_out[6]$latch" (data pin = "F_BUS", clock pin = "FR_BUS") is -0.685 ns
+    Info: + Longest clock path from clock "FR_BUS" to destination register is 4.285 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.817 ns) = 0.817 ns; Loc. = PIN_T16; Fanout = 8; CLK Node = 'FR_BUS'
+        Info: 2: + IC(1.123 ns) + CELL(0.228 ns) = 2.168 ns; Loc. = LCCOMB_X2_Y8_N2; Fanout = 1; COMB Node = 'Data_out[7]~16'
+        Info: 3: + IC(1.120 ns) + CELL(0.000 ns) = 3.288 ns; Loc. = CLKCTRL_G2; Fanout = 8; COMB Node = 'Data_out[7]~16clkctrl'
+        Info: 4: + IC(0.944 ns) + CELL(0.053 ns) = 4.285 ns; Loc. = LCCOMB_X2_Y8_N4; Fanout = 1; REG Node = 'Data_out[6]$latch'
+        Info: Total cell delay = 1.098 ns ( 25.62 % )
+        Info: Total interconnect delay = 3.187 ns ( 74.38 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: - Shortest pin to register delay is 4.970 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.810 ns) = 0.810 ns; Loc. = PIN_P19; Fanout = 9; CLK Node = 'F_BUS'
+        Info: 2: + IC(3.674 ns) + CELL(0.053 ns) = 4.537 ns; Loc. = LCCOMB_X2_Y8_N22; Fanout = 1; COMB Node = 'Data_out[6]~23'
+        Info: 3: + IC(0.208 ns) + CELL(0.225 ns) = 4.970 ns; Loc. = LCCOMB_X2_Y8_N4; Fanout = 1; REG Node = 'Data_out[6]$latch'
+        Info: Total cell delay = 1.088 ns ( 21.89 % )
+        Info: Total interconnect delay = 3.882 ns ( 78.11 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 180 megabytes
+    Info: Processing ended: Fri Jan 05 23:44:38 2018
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

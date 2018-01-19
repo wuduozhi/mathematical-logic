@@ -1,0 +1,15 @@
+Analysis & Synthesis Status : Successful - Fri Jan 05 23:50:36 2018
+Quartus II Version : 9.0 Build 184 04/29/2009 SP 1 SJ Web Edition
+Revision Name : CPU_ORDER
+Top-level Entity Name : cpu_order
+Family : Stratix II
+Logic utilization : N/A
+    Combinational ALUTs : 24
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 31
+Total virtual pins : 0
+Total block memory bits : 0
+DSP block 9-bit elements : 0
+Total PLLs : 0
+Total DLLs : 0

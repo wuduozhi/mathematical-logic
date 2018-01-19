@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+entity xuanze is
+port(
+  juli:in integer range 0 to 1200;
+ 
+  clkout:out integer range 0 to 33;
+  );
+  end entity xuanze;
+  architecture xuanze_arch of xuanze is
+  begin
+  process(juli)
+  begin
+  if juli<50 then clkout<=8;
+  elsif juli<150 then clkout<=17;
+  else clkout<=33;
+ 
+  end if;
+  end process;
+  end xuanze_arch;
+  
